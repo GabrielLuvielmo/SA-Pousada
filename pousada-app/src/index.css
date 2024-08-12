@@ -21,13 +21,17 @@ a {
 a:hover {
   color: #535bf2;
 }
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 body {
   margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-image: url(../images/fundo-cadastro.jpeg);
+  background-size: cover;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-style: initial;
 }
 
 h1 {
@@ -75,3 +79,5 @@ button:focus-visible {
   padding: 2%;
 
 }
+
+

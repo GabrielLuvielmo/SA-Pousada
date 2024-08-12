@@ -84,31 +84,232 @@ button{
 }
 /* Css da tela de cadastro */
 .CaixaCadastro{
-  background-color: rgba(138, 140, 178, 0.750);
-  width: 80vh;
-  padding: 50px;
-  border-radius: 50px;
+  background-color: #2f2f55f9;
+  width: 65vh;
+  padding: 10px;
+  border-radius: 20px;
+
+  color: white;
 }
-.input-cadastro{
-    background-color: rgb(250, 133, 0);
-    padding: 2%;
-    border-radius: 1.7vh;
-    width: 80%;
-    margin-left: 10%;
-    display: block;
-    margin-bottom: 20px;
-    
+
+.input-line {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.input-line input {
+  border: none;
+  border-bottom: 2px solid #ccc;
+  padding: 0.5rem;
+  width: 73%;
+  outline: none;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.input-line input:focus {
+  border-color: orange;
+  transform: scaleX(1.1); /* Expande a linha para um efeito de foco */
+}
+
+.input-line input::placeholder {
+  color: transparent; /* Esconde o placeholder para manter a linha limpa */
+}
+
+/* Adiciona uma animação mais suave para o foco */
+.input-line input:focus:not(.focused) {
+  animation: pulse 0.6s ease-out;
+}
+
+@keyframes pulse {
+  0% {
+    border-color: orange;
   }
-.botao-cadastro{
-  background-color: rgb(250, 133, 0);
-  font-size: 20px;
-  text-align: center;
-  border-radius: 35px;
-  display: block;
-  width: 80%;
-  margin: 0 auto;
-  color: black;
+  50% {
+    border-color: #5351bc; /* Um tom mais claro de laranja */
+  }
+  100% {
+    border-color: orange;
+  }
 }
-.botao-cadastro:hover{
-  background-color: azure;
+.btn-6 {
+  background: rgb(250, 133, 0);
+  background: radial-gradient(circle, rgb(250, 133, 0) 0%,  rgb(255, 179, 15) 100%);
+  border-radius: 60px;
+  line-height: 42px;
+  border: none;
+  position: relative;
+  overflow: hidden; /* Oculta qualquer conteúdo que saia do botão */
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+}
+
+.btn-6:before,
+.btn-6:after {
+  position: absolute;
+  content: "";
+  width: 0%;
+  height: 2px; /* Ajuste conforme necessário */
+  background: rgba(255,255,255,0.7);
+  box-shadow:
+    -1px -1px 20px 0px rgba(255,255,255,0.7),
+    -4px -4px 5px 0px rgba(255,255,255,0.7),
+    7px 7px 20px 0px rgba(0,0,0,0.4),
+    4px 4px 5px 0px rgba(0,0,0,0.3);
+  transition: width 0.5s ease; /* Suaviza a expansão da linha */
+}
+
+.btn-6:before {
+  top: 0;
+  left: 0;
+  transition: width 0.5s ease; /* Adiciona transição suave */
+}
+
+.btn-6:after {
+  bottom: 0;
+  right: 0;
+  transition: width 0.5s ease; /* Adiciona transição suave */
+}
+
+.btn-6:hover {
+  color: #76aef1;
+}
+
+.btn-6:hover:before,
+.btn-6:hover:after {
+  width: 100%;
+}
+
+.btn-6 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.btn-6 span:before,
+.btn-6 span:after {
+  position: absolute;
+  content: "";
+  background: rgba(255,255,255,0.7);
+  box-shadow:
+    -1px -1px 20px 0px rgba(255,255,255,0.7),
+    -4px -4px 5px 0px rgba(255,255,255,0.7),
+    7px 7px 20px 0px rgba(0,0,0,0.4),
+    4px 4px 5px 0px rgba(0,0,0,0.3);
+  transition: width 0.5s ease;
+}
+
+.btn-6 span:before {
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 2px; /* Ajuste conforme necessário */
+}
+
+.btn-6 span:after {
+  bottom: 0;
+  right: 0;
+  width: 0%;
+  height: 2px; /* Ajuste conforme necessário */
+}
+
+.btn-6 span:hover:before,
+.btn-6 span:hover:after {
+  width: 100%;
+}
+.btn-7 {
+  background: rgb(250, 133, 0);
+  background: radial-gradient(circle, rgb(250, 133, 0) 0%, rgb(255, 179, 15) 100%);
+  border-radius: 60px;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  position: relative;
+  overflow: hidden; /* Oculta qualquer conteúdo que saia do botão */
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+  font-style: bold;
+}
+
+.btn-7:before,
+.btn-7:after {
+  position: absolute;
+  content: "";
+  width: 0%;
+  height: 2px; /* Ajuste conforme necessário */
+  background: rgba(255,255,255,0.7);
+  box-shadow:
+    -1px -1px 20px 0px rgba(255,255,255,0.7),
+    -4px -4px 5px 0px rgba(255,255,255,0.7),
+    7px 7px 20px 0px rgba(0,0,0,0.4),
+    4px 4px 5px 0px rgba(0,0,0,0.3);
+  transition: width 0.5s ease; /* Suaviza a expansão da linha */
+}
+
+.btn-7:before {
+  top: 0;
+  left: 0;
+  transition: width 0.5s ease; /* Adiciona transição suave */
+}
+
+.btn-7:after {
+  bottom: 0;
+  right: 0;
+  transition: width 0.5s ease; /* Adiciona transição suave */
+}
+
+.btn-7:hover {
+  color: #76aef1;
+}
+
+.btn-7:hover:before,
+.btn-7:hover:after {
+  width: 100%;
+}
+
+.btn-7 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.btn-7 span:before,
+.btn-7 span:after {
+  position: absolute;
+  content: "";
+  background: rgba(255,255,255,0.7);
+  box-shadow:
+    -1px -1px 20px 0px rgba(255,255,255,0.7),
+    -4px -4px 5px 0px rgba(255,255,255,0.7),
+    7px 7px 20px 0px rgba(0,0,0,0.4),
+    4px 4px 5px 0px rgba(0,0,0,0.3);
+  transition: width 0.5s ease;
+}
+
+.btn-7 span:before {
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 2px; /* Ajuste conforme necessário */
+}
+
+.btn-7 span:after {
+  bottom: 0;
+  right: 0;
+  width: 0%;
+  height: 2px; /* Ajuste conforme necessário */
+}
+
+.btn-7 span:hover:before,
+.btn-7 span:hover:after {
+  width: 100%;
 }

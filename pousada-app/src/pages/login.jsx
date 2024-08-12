@@ -25,7 +25,7 @@ import '../App.css'
     return (
       <div className='CaixaCadastro'>
         <div>
-          <h1>Cadastro</h1>
+          <h1>CADASTRAR</h1>
           <form onSubmit={handleSubmit}>
             <label>Email:</label>
             <div className='input-line'>
@@ -68,7 +68,7 @@ import '../App.css'
           <span></span>
           <span></span>
           <span></span>
-          Cadastrar
+          
           </a>
           <br />
           <a href="#" class="btn-7">
@@ -76,9 +76,8 @@ import '../App.css'
           <span></span>
           <span></span>
           <span></span>
-          Voltar
+          
           </a>
-          <br /> 
           </form>
           {submitted && <div className='success-message'>Cadastro realizado com sucesso!</div>}
           {error && <div className='error-message'>Erro no cadastro!</div>}
@@ -86,5 +85,4 @@ import '../App.css'
       </div>
     );
   };
-  // ARRUMAR OS <BR> DPS PQ TA FEIO PA K7 KKKKKKKKKKKKKKK
-export default Cadastro;
+export default Login;
