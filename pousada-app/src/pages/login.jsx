@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../App.css'
 
-  const Cadastro = () => {
+  const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -25,7 +25,7 @@ import '../App.css'
     return (
       <div className='CaixaCadastro'>
         <div>
-          <h1>CADASTRAR</h1>
+          <h1>Entrar</h1>
           <form onSubmit={handleSubmit}>
             <label>Email:</label>
             <div className='input-line'>
@@ -63,7 +63,7 @@ import '../App.css'
               />
             </div>
             <br />
-            <a href="#" class="btn-6">
+            <a href="#" className="btn-6">
           <span></span>
           <span></span>
           <span></span>
@@ -71,7 +71,7 @@ import '../App.css'
           
           </a>
           <br />
-          <a href="#" class="btn-7">
+          <a href="#" className="btn-7">
           <span></span>
           <span></span>
           <span></span>
