@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import '../App.css';
+import { FaGoogle, FaFacebook } from "react-icons/fa";
+
 
 const Cadastro = () => {
   const [email, setEmail] = useState('');
@@ -34,6 +36,7 @@ const Cadastro = () => {
   };
 
   return (
+    
     <div className='CaixaCadastro'>
       <div>
         <h1>Cadastro</h1>
@@ -78,16 +81,25 @@ const Cadastro = () => {
             Cadastrar
           </button>
           <h5>Já Possui Conta? <a className='entrar'href="./login.jsx">Entrar</a></h5>
-          <div className='entrar-conta'>
-          <img className='logo1' src='/images/google.png' alt='gugol'/>
-          <img className='logo1' src='/images/Facebook.png' alt='cara-livro'/>
+         
+          <div className='container-logos'>
+            {/* <img className='google' src='/images/google.png' alt='gugol'/>  */}
+            <FaGoogle /> 
+            <FaFacebook />
+       
           </div>
+          
+          
+         
         </form>
         {submitted && !error && <div className='success-message'>Cadastro realizado com sucesso!</div>}
         {error && <div className='error-message'>{error}</div>}
       </div>
+
+
     </div>
   );
 };
 
 export default Cadastro;
+

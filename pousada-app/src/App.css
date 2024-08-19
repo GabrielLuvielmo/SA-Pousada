@@ -10,6 +10,7 @@
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
+
 }
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
@@ -41,14 +42,6 @@
   color: #888;
 }
 /* CSS do Cadastro */
-.container{
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
 form{
   display: flex;
   flex-direction: column;
@@ -91,6 +84,7 @@ button{
   padding: 10px;
   border-radius: 20px;
   color: white;
+  margin-top: -15px;
 }
 
 .input-line {
@@ -228,12 +222,48 @@ button{
 }
 
 .entrar-conta{
-  width:10px;
+  width:20px;
   height:10px;
   gap: 10px;
   
 }
-.logo1{
-  height: 100px;
-  width: 100px;
+
+.container-logos {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  font-size: 35px;
+  color: whitesmoke;
+  gap: 10px;
+  margin-top: -10px;
+}
+
+.entrar {
+  color: #41a9ee;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+  font-size: 13px;
+}
+
+.entrar::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #3498db;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.entrar:hover {
+  color: #1abc9c;
+}
+
+.entrar:hover::before {
+  visibility: visible;
+  width: 100%;
 }
