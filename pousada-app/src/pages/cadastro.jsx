@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Route, Link, Router  } from 'react-router-dom';
 import '../App.css';
 import { FaGoogle, FaFacebook } from "react-icons/fa";
-import Login from './login.jsx';
+import Login from './login';
+import { Link } from 'react-router-dom';
 
 const Cadastro = () => {
   const [email, setEmail] = useState('');
@@ -83,11 +83,7 @@ const Cadastro = () => {
             Cadastrar
           </button>
           
-          <Router>
-          <h5>Já Possui Conta? <Link to="/login">Entrar</Link></h5>
-          <Route path="/login" component={Login} />
-          </Router>
-          
+          <h5>Já Possui Conta? <Link to="/login" className='entrar'>Entrar</Link></h5>
          
           <div className='container-logos'>
             <FaGoogle /> 

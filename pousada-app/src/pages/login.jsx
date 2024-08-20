@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../App.css';
 import { FaGoogle, FaFacebook } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -62,8 +63,9 @@ const Login = () => {
           <button type="submit" className="btn-6">
             Entrar
           </button>
-          <h5>Não tem uma conta? <a className='entrar' href='./cadastro.jsx'>Cadastre-se</a></h5>
-         
+
+          <h5>Não Possui uma Conta? <Link to="/cadastro" className='entrar'>Cadastre-se</Link></h5>
+        
           <div className='container-logos'>
             <FaGoogle /> 
             <FaFacebook />

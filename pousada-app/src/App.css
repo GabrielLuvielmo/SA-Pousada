@@ -84,7 +84,7 @@ button{
   padding: 10px;
   border-radius: 20px;
   color: white;
-  margin-top: 27%;
+  margin-top: 12%;
   justify-content: baseline;
 }
 
@@ -283,8 +283,8 @@ button{
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000; /* Garante que a navbar fique acima de outros elementos */
-  justify-content: space-between; /* Alinha os itens à esquerda e à direita */
+  z-index: 1000; 
+  justify-content: space-between; 
 }
 
 .navbar-brand {
