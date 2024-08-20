@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import { BrowserRouter, Route, Link, Router  } from 'react-router-dom';
 import '../App.css';
 import { FaGoogle, FaFacebook } from "react-icons/fa";
-
+import Login from './login.jsx';
 
 const Cadastro = () => {
   const [email, setEmail] = useState('');
@@ -10,11 +11,12 @@ const Cadastro = () => {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
 
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
 
-    // Lógica de validação
     if (!email || !password || !confirmPassword) {
       setError('Por favor, preencha todos os campos.');
       return;
@@ -24,6 +26,7 @@ const Cadastro = () => {
       setError('As senhas não coincidem.');
       return;
     }
+
     setError('');
   };
 
@@ -36,7 +39,6 @@ const Cadastro = () => {
   };
 
   return (
-    
     <div className='CaixaCadastro'>
       <div>
         <h1>Cadastro</h1>
@@ -80,26 +82,23 @@ const Cadastro = () => {
           <button type="submit" className="btn-6">
             Cadastrar
           </button>
-          <h5>Já Possui Conta? <a className='entrar'href="./login.jsx">Entrar</a></h5>
+          
+          <Router>
+          <h5>Já Possui Conta? <Link to="/login">Entrar</Link></h5>
+          <Route path="/login" component={Login} />
+          </Router>
+          
          
           <div className='container-logos'>
-            {/* <img className='google' src='/images/google.png' alt='gugol'/>  */}
             <FaGoogle /> 
             <FaFacebook />
-       
           </div>
-          
-          
-         
         </form>
         {submitted && !error && <div className='success-message'>Cadastro realizado com sucesso!</div>}
         {error && <div className='error-message'>{error}</div>}
       </div>
-
-
     </div>
   );
 };
 
 export default Cadastro;
-
