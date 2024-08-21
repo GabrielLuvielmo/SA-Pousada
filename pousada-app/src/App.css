@@ -1,20 +1,32 @@
+/* CSS Global */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Inclui padding e bordas no cálculo da largura total */
+  overflow-x: hidden; /* Remove a scrollbar horizontal */
+}
+
+/* Garantir que o conteúdo não ultrapasse a largura da viewport */
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  overflow-x: hidden; /* Remove a scrollbar horizontal */
 }
 
+/* Outros estilos existentes */
 .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
-
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -41,44 +53,45 @@
 .read-the-docs {
   color: #888;
 }
+
 /* CSS do Cadastro */
-form{
+form {
   display: flex;
   flex-direction: column;
 }
-.formGroup{
+
+.formGroup {
   margin-bottom: 15px;
 }
 
-label{
+label {
   margin-bottom: 5px;
   font-weight: bold;
 }
 
-input{
+input {
   padding: 10px;
   font-size: 16px;
   border-radius: 4px;
   border: 1px solid #ccc;
 }
 
-button{
+button {
   font-size: 16px;
   background-color: #4CAF50;
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  
-  
 }
 
 .successMessage {
   text-align: center;
   color: #4CAF50;
 }
-/* Css da tela de cadastro */
-.CaixaCadastro{
+
+/* CSS da Tela de Cadastro */
+.CaixaCadastro {
   background-color: #2f2f55f9;
   width: 65vh;
   padding: 10px;
@@ -127,9 +140,10 @@ button{
     border-color: orange;
   }
 }
+
 .btn-6 {
   background: rgb(250, 133, 0);
-  background: radial-gradient(circle, rgb(250, 133, 0) 0%,  rgb(255, 179, 15) 100%);
+  background: radial-gradient(circle, rgb(250, 133, 0) 0%, rgb(255, 179, 15) 100%);
   border-radius: 60px;
   line-height: 42px;
   padding: 0%;
@@ -175,7 +189,7 @@ button{
 }
 
 .btn-6:hover {
-  color: #76aef1;
+  color: #ffffff;
 }
 
 .btn-6:hover:before,
@@ -222,11 +236,10 @@ button{
   width: 100%;
 }
 
-.entrar-conta{
-  width:20px;
-  height:10px;
+.entrar-conta {
+  width: 20px;
+  height: 10px;
   gap: 10px;
-  
 }
 
 .container-logos {
@@ -272,19 +285,19 @@ button{
 /* CSS DA NAVBAR TENEBROSA!!!!!!!! */
 
 /* Navbar styles */
-
 .bg-body-tertiary {
-  background: rgb(47,47,85);
+  background: rgb(47, 47, 85);
   color: white;
-  padding: -20rem;
-  border-width: 20px;
+  padding: 0.2rem; /* Reduzido para afinar a navbar */
   border-bottom: 1px solid #444;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  z-index: 1000; 
-  justify-content: space-between; 
+  width: 100%; /* Corrigido para 100% da largura */
+  z-index: 1000;
+  height: 4rem; /* Altura específica definida para afinar a navbar */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra suave */
+  overflow: hidden; /* Esconde animações fora dos limites da navbar */
 }
 
 .navbar-brand {
@@ -292,104 +305,87 @@ button{
   font-weight: bold;
   color: #fff;
   text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease; /* Animação de cor e movimento */
+  margin-left: 20px; /* Adiciona margem à esquerda para espaçar do lado esquerdo */
 }
 
 .navbar-brand:hover {
   color: #ccc;
+  transform: scale(1.1); /* Aumenta ligeiramente o tamanho ao passar o mouse */
 }
 
 .navbar-toggler {
   border: none;
   background-color: #444;
   padding: 0.5rem 1rem;
-  font-size: 1.5rem;
+  font-size: 1.5rem; /* Corrigido o tamanho da fonte */
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-right: 20px; /* Adiciona margem à direita para espaçar do final da navbar */
 }
 
 .navbar-toggler:hover {
   background-color: #555;
+  transform: rotate(90deg); /* Animação de rotação ao passar o mouse */
 }
 
 .navbar-collapse {
-  justify-content: space-between;
+  justify-content: flex-end; /* Alinha os itens da navbar para a direita */
 }
 
 .nav {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
-  margin-bottom: 0;
 }
 
 .nav-link {
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
-  margin-right: 20px;
-  transition: color 0.2s ease;
+  transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+  display: inline-block;
+  font-size: 1.4rem;
+  margin: 0 50px;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden; /* Esconde o efeito de borda animada fora do link */
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #ffffff;
+  transition: width 0.3s ease, left 0.3s ease;
+  z-index: 1;
+}
+
+.nav-link:hover::before {
+  width: 100%;
+  left: 0;
 }
 
 .nav-link:hover {
-  color: #ccc;
+  color: #ffffff;
+  transform: translateY(-3px);
 }
 
-.nav-dropdown {
-  position: relative;
-}
 
-.nav-dropdown-title {
-  color: #fff;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.nav-dropdown-title:hover {
-  color: #ccc;
-}
-
-.nav-dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #333;
-  border: 1px solid #444;
-  padding: 10px;
-  z-index: 1;
-  display: none;
-}
-
-.nav-dropdown-menu.show {
-  display: block;
-}
-
-.nav-dropdown-item {
-  color: #fff;
-  text-decoration: none;
-  padding: 10px;
-  transition: background-color 0.2s ease;
-}
-
-.nav-dropdown-item:hover {
-  background-color: #444;
-}
-
-.nav-dropdown-divider {
-  border-bottom: 1px solid #444;
-  margin: 10px;
-}
 
 main {
-  padding-top: 60px; /* adjust the value to match the height of your navbar */
+  padding-top: 60px; /* Ajuste conforme a altura da navbar */
 }
 
 /* Responsive styles */
-
 @media only screen and (max-width: 768px) {
   .navbar-brand {
     font-size: 1.2rem;
+    margin-left: 10px; /* Reduzido para telas menores */
   }
   .nav-link {
-    margin-right: 10px;
+    margin: 0 10px;
   }
   .nav-dropdown-menu {
     width: 100%;
@@ -399,9 +395,10 @@ main {
 @media only screen and (max-width: 480px) {
   .navbar-brand {
     font-size: 1rem;
+    margin-left: 5px; /* Reduzido para telas menores */
   }
   .nav-link {
-    margin-right: 5px;
+    margin: 0 5px;
   }
   .nav-dropdown-menu {
     width: 100%;
