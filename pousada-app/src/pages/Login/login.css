@@ -1,8 +1,12 @@
-/* CSS do Cadastro */
-main{
-        background-image: url(../images/fundo-pousada.png);
-}
+/*
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  overflow-x: hidden;
+*/
 
+/* CSS do Cadastro */
 form {
     display: flex;
     flex-direction: column;
@@ -38,6 +42,12 @@ form {
     color: #4CAF50;
   }
   /* CSS da Tela de Cadastro */
+  .fundo{
+    background-image: url(../images/fundo-pousada.png);
+    width: 100vw;
+    height: 100vh;
+  }
+
   .CaixaCadastro {
     background-color: #2f2f55f9;
     width: 65vh;
@@ -46,7 +56,9 @@ form {
     color: white;
     margin-top: 12%;
     justify-content: baseline;
+    
   }
+
   
   .input-line {
     position: relative;

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import '../../App.css';
 import './login.css';
 import { FaGoogle, FaFacebook } from "react-icons/fa";
 import Login from './login';
 import { Link } from 'react-router-dom';
+
 
 const Cadastro = () => {
   const [email, setEmail] = useState('');
@@ -38,61 +38,63 @@ const Cadastro = () => {
   const handleBlur = (e) => {
     e.target.classList.remove('focused');
   };
-
+    
   return (
-    <div className='CaixaCadastro'>
-      <div>
-        <h1>Cadastro</h1>
-        <form onSubmit={handleSubmit}>
-          <label>Email:</label>
-          <div className='input-line'>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              onFocus={handleFocus}
-              onBlur={handleBlur}
-              placeholder=" "
-            />
-          </div>
-          <br />
-          <label>Senha:</label>
-          <div className='input-line'>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              onFocus={handleFocus}
-              onBlur={handleBlur}
-              placeholder=" "
-            />
-          </div>
-          <br />
-          <label>Confirmar Senha:</label>
-          <div className='input-line'>
-            <input
-              type="password"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              onFocus={handleFocus}
-              onBlur={handleBlur}
-              placeholder=" "
-            />
-          </div>
-          <br />
-          <button type="submit" className="btn-6">
-            Cadastrar
-          </button>
+    <div className='fundo'>
+      <div className='CaixaCadastro'>
+        <div>
+          <h1>Cadastro</h1>
+          <form onSubmit={handleSubmit}>
+            <label>Email:</label>
+            <div className='input-line'>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
+                placeholder=" "
+              />
+            </div>
+            <br />
+            <label>Senha:</label>
+            <div className='input-line'>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
+                placeholder=" "
+              />
+            </div>
+            <br />
+            <label>Confirmar Senha:</label>
+            <div className='input-line'>
+              <input
+                type="password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
+                placeholder=" "
+              />
+            </div>
+            <br />
+            <button type="submit" className="btn-6">
+              Cadastrar
+            </button>
+            
+            <h5>Já Possui Conta? <Link to="/login" className='entrar'>Entrar</Link></h5>
           
-          <h5>Já Possui Conta? <Link to="/login" className='entrar'>Entrar</Link></h5>
-         
-          <div className='container-logos'>
-            <FaGoogle /> 
-            <FaFacebook />
-          </div>
-        </form>
-        {submitted && !error && <div className='success-message'>Cadastro realizado com sucesso!</div>}
-        {error && <div className='error-message'>{error}</div>}
+            <div className='container-logos'>
+              <FaGoogle /> 
+              <FaFacebook />
+            </div>
+          </form>
+          {submitted && !error && <div className='success-message'>Cadastro realizado com sucesso!</div>}
+          {error && <div className='error-message'>{error}</div>}
+        </div>
       </div>
     </div>
   );

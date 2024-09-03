@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import '../../App.css';
-import './login';
+import React, { useState } from 'react'
+import './login.css';
 import { FaGoogle, FaFacebook } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 

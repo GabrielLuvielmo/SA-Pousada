@@ -12,6 +12,7 @@ function App() {
     <Header/>
     <Router>
       <Routes>
+
         {/*Caminho Para a Pagina de Cadastro*/}
         <Route path="/cadastro" element={<Cadastro />} />    
 
