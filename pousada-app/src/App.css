@@ -6,7 +6,7 @@ html, body {
   overflow-x: hidden; /* Remove a scrollbar horizontal */
 }
 
-/* Garantir que o conteúdo não ultrapasse a largura da viewport */
+/* CENTRALIZAR A PRR DAS MERDAS DOS CONTEINERS */
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -15,272 +15,6 @@ html, body {
   overflow-x: hidden; /* Remove a scrollbar horizontal */
 }
 
-/* Outros estilos existentes */
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-/* CSS do Cadastro */
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.formGroup {
-  margin-bottom: 15px;
-}
-
-label {
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-input {
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-}
-
-button {
-  font-size: 16px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.successMessage {
-  text-align: center;
-  color: #4CAF50;
-}
-
-/* CSS da Tela de Cadastro */
-.CaixaCadastro {
-  background-color: #2f2f55f9;
-  width: 65vh;
-  padding: 10px;
-  border-radius: 20px;
-  color: white;
-  margin-top: 12%;
-  justify-content: baseline;
-}
-
-.input-line {
-  position: relative;
-  margin-bottom: 1rem;
-}
-
-.input-line input {
-  border: none;
-  border-bottom: 2px solid #ccc;
-  padding: 0.5rem;
-  width: 73%;
-  outline: none;
-  transition: border-color 0.3s ease, transform 0.3s ease;
-}
-
-.input-line input:focus {
-  border-color: orange;
-  transform: scaleX(1.1); /* Expande a linha para um efeito de foco */
-}
-
-.input-line input::placeholder {
-  color: transparent; /* Esconde o placeholder para manter a linha limpa */
-}
-
-/* Adiciona uma animação mais suave para o foco */
-.input-line input:focus:not(.focused) {
-  animation: pulse 0.6s ease-out;
-}
-
-@keyframes pulse {
-  0% {
-    border-color: orange;
-  }
-  50% {
-    border-color: #5351bc; /* Um tom mais claro de laranja */
-  }
-  100% {
-    border-color: orange;
-  }
-}
-
-.btn-6 {
-  background: rgb(250, 133, 0);
-  background: radial-gradient(circle, rgb(250, 133, 0) 0%, rgb(255, 179, 15) 100%);
-  border-radius: 60px;
-  line-height: 42px;
-  padding: 0%;
-  border: none;
-  position: relative;
-  overflow: hidden; /* Oculta qualquer conteúdo que saia do botão */
-  color: white;
-  font-size: 25px;
-  cursor: pointer;
-  transition: color 0.3s ease;
-  width: 50%;
-  display: block;
-  margin: 0 auto;
-  font-family: 'Roboto', sans-serif;
-  font-weight: bold;
-}
-
-.btn-6:before,
-.btn-6:after {
-  position: absolute;
-  content: "";
-  width: 0%;
-  height: 2px; /* Ajuste conforme necessário */
-  background: rgba(255,255,255,0.7);
-  box-shadow:
-    -1px -1px 20px 0px rgba(255,255,255,0.7),
-    -4px -4px 5px 0px rgba(255,255,255,0.7),
-    7px 7px 20px 0px rgba(0,0,0,0.4),
-    4px 4px 5px 0px rgba(0,0,0,0.3);
-  transition: width 0.5s ease; /* Suaviza a expansão da linha */
-}
-
-.btn-6:before {
-  top: 0;
-  left: 0;
-  transition: width 0.5s ease; /* Adiciona transição suave */
-}
-
-.btn-6:after {
-  bottom: 0;
-  right: 0;
-  transition: width 0.5s ease; /* Adiciona transição suave */
-}
-
-.btn-6:hover {
-  color: #ffffff;
-}
-
-.btn-6:hover:before,
-.btn-6:hover:after {
-  width: 100%;
-}
-
-.btn-6 span {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.btn-6 span:before,
-.btn-6 span:after {
-  position: absolute;
-  content: "";
-  background: rgba(255,255,255,0.7);
-  box-shadow:
-    -1px -1px 20px 0px rgba(255,255,255,0.7),
-    -4px -4px 5px 0px rgba(255,255,255,0.7),
-    7px 7px 20px 0px rgba(0,0,0,0.4),
-    4px 4px 5px 0px rgba(0,0,0,0.3);
-  transition: width 0.5s ease;
-}
-
-.btn-6 span:before {
-  top: 0;
-  left: 0;
-  width: 0%;
-  height: 2px; /* Ajuste conforme necessário */
-}
-
-.btn-6 span:after {
-  bottom: 0;
-  right: 0;
-  width: 0%;
-  height: 2px; /* Ajuste conforme necessário */
-}
-
-.btn-6 span:hover:before,
-.btn-6 span:hover:after {
-  width: 100%;
-}
-
-.entrar-conta {
-  width: 20px;
-  height: 10px;
-  gap: 10px;
-}
-
-.container-logos {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  font-size: 35px;
-  color: whitesmoke;
-  gap: 10px;
-  margin-top: -10px;
-}
-
-.entrar {
-  color: #41a9ee;
-  text-decoration: none;
-  font-weight: bold;
-  position: relative;
-  transition: color 0.3s ease-in-out;
-  font-size: 13px;
-}
-
-.entrar::before {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -2px;
-  left: 0;
-  background-color: #3498db;
-  visibility: hidden;
-  transition: all 0.3s ease-in-out;
-}
-
-.entrar:hover {
-  color: #1abc9c;
-}
-
-.entrar:hover::before {
-  visibility: visible;
-  width: 100%;
-}
 
 /* CSS DA NAVBAR TENEBROSA!!!!!!!! */
 
@@ -292,12 +26,13 @@ button {
   border-bottom: 1px solid #444;
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%; /* Corrigido para 100% da largura */
+  right: 10%;
+  width: 80%; /* Corrigido para 100% da largura */
   z-index: 1000;
   height: 4rem; /* Altura específica definida para afinar a navbar */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra suave */
   overflow: hidden; /* Esconde animações fora dos limites da navbar */
+
 }
 
 .navbar-brand {
@@ -317,7 +52,7 @@ button {
 .navbar-toggler {
   border: none;
   background-color: #444;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.5rem;
   font-size: 1.5rem; /* Corrigido o tamanho da fonte */
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
@@ -385,7 +120,7 @@ main {
     margin-left: 10px; /* Reduzido para telas menores */
   }
   .nav-link {
-    margin: 0 10px;
+    margin: 10px;
   }
   .nav-dropdown-menu {
     width: 100%;
@@ -405,3 +140,4 @@ main {
     padding: 5px;
   }
 }
+/*navbar ate aqui*/

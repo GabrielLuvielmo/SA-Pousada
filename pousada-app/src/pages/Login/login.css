@@ -1,0 +1,231 @@
+/* CSS do Cadastro */
+main{
+        background-image: url(../images/fundo-pousada.png);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .formGroup {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  button {
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .successMessage {
+    text-align: center;
+    color: #4CAF50;
+  }
+  /* CSS da Tela de Cadastro */
+  .CaixaCadastro {
+    background-color: #2f2f55f9;
+    width: 65vh;
+    padding: 10px;
+    border-radius: 20px;
+    color: white;
+    margin-top: 12%;
+    justify-content: baseline;
+  }
+  
+  .input-line {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+  
+  .input-line input {
+    border: none;
+    border-bottom: 2px solid #ccc;
+    padding: 0.5rem;
+    width: 73%;
+    outline: none;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .input-line input:focus {
+    border-color: orange;
+    transform: scaleX(1.1); /* Expande a linha para um efeito de foco */
+  }
+  
+  .input-line input::placeholder {
+    color: transparent; /* Esconde o placeholder para manter a linha limpa */
+  }
+  
+  /* Adiciona uma animação mais suave para o foco */
+  .input-line input:focus:not(.focused) {
+    animation: pulse 0.6s ease-out;
+  }
+  
+  @keyframes pulse {
+    0% {
+      border-color: orange;
+    }
+    50% {
+      border-color: #5351bc; /* Um tom mais claro de laranja */
+    }
+    100% {
+      border-color: orange;
+    }
+  }
+  
+  .btn-6 {
+    background: rgb(250, 133, 0);
+    background: radial-gradient(circle, rgb(250, 133, 0) 0%, rgb(255, 179, 15) 100%);
+    border-radius: 60px;
+    line-height: 42px;
+    padding: 0%;
+    border: none;
+    position: relative;
+    overflow: hidden; /* Oculta qualquer conteúdo que saia do botão */
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+  }
+  
+  .btn-6:before,
+  .btn-6:after {
+    position: absolute;
+    content: "";
+    width: 0%;
+    height: 2px; /* Ajuste conforme necessário */
+    background: rgba(255,255,255,0.7);
+    box-shadow:
+      -1px -1px 20px 0px rgba(255,255,255,0.7),
+      -4px -4px 5px 0px rgba(255,255,255,0.7),
+      7px 7px 20px 0px rgba(0,0,0,0.4),
+      4px 4px 5px 0px rgba(0,0,0,0.3);
+    transition: width 0.5s ease; /* Suaviza a expansão da linha */
+  }
+  
+  .btn-6:before {
+    top: 0;
+    left: 0;
+    transition: width 0.5s ease; /* Adiciona transição suave */
+  }
+  
+  .btn-6:after {
+    bottom: 0;
+    right: 0;
+    transition: width 0.5s ease; /* Adiciona transição suave */
+  }
+  
+  .btn-6:hover {
+    color: #ffffff;
+  }
+  
+  .btn-6:hover:before,
+  .btn-6:hover:after {
+    width: 100%;
+  }
+  
+  .btn-6 span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .btn-6 span:before,
+  .btn-6 span:after {
+    position: absolute;
+    content: "";
+    background: rgba(255,255,255,0.7);
+    box-shadow:
+      -1px -1px 20px 0px rgba(255,255,255,0.7),
+      -4px -4px 5px 0px rgba(255,255,255,0.7),
+      7px 7px 20px 0px rgba(0,0,0,0.4),
+      4px 4px 5px 0px rgba(0,0,0,0.3);
+    transition: width 0.5s ease;
+  }
+  
+  .btn-6 span:before {
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 2px; /* Ajuste conforme necessário */
+  }
+  
+  .btn-6 span:after {
+    bottom: 0;
+    right: 0;
+    width: 0%;
+    height: 2px; /* Ajuste conforme necessário */
+  }
+  
+  .btn-6 span:hover:before,
+  .btn-6 span:hover:after {
+    width: 100%;
+  }
+  
+  .entrar-conta {
+    width: 20px;
+    height: 10px;
+    gap: 10px;
+  }
+  
+  .container-logos {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    font-size: 35px;
+    color: whitesmoke;
+    gap: 10px;
+    margin-top: -10px;
+  }
+  
+  .entrar {
+    color: #41a9ee;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+    font-size: 13px;
+  }
+  
+  .entrar::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #3498db;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .entrar:hover {
+    color: #1abc9c;
+  }
+  
+  .entrar:hover::before {
+    visibility: visible;
+    width: 100%;
+  }
+  

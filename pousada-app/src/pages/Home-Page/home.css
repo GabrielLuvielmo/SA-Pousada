@@ -1,0 +1,13 @@
+body{
+    background-color: #2f2f5544;
+}
+
+.CaixaHome {
+    background-color: #2f2f55f9;
+    width: 65vh;
+    padding: 10px;
+    border-radius: 20px;
+    color: white;
+    margin-top: 12%;
+    justify-content: baseline;
+}
