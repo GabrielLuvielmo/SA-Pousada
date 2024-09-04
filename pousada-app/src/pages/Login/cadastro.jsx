@@ -41,6 +41,7 @@ const Cadastro = () => {
     
   return (
     <div className='fundo'>
+      <br /><br />
       <div className='CaixaCadastro'>
         <div>
           <h1>Cadastro</h1>
@@ -84,8 +85,7 @@ const Cadastro = () => {
             <button type="submit" className="btn-6">
               Cadastrar
             </button>
-            
-            <h5>Já Possui Conta? <Link to="/login" className='entrar'>Entrar</Link></h5>
+            <h5 className="ja">Já Possui Conta? <Link to="/login" className='entrar'>Entrar</Link></h5>
           
             <div className='container-logos'>
               <FaGoogle /> 

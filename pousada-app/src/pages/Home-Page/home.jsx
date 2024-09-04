@@ -5,13 +5,12 @@ import { Link } from 'react-router-dom';
 
 function Home(){
         
-    return(
-        <div className='CaixaHome'>
-            <h3>aaaa</h3>
-            <h5>teste para tela cadastro ou sla <Link to="/cadastro" className='entrar'>Entrar</Link></h5>
+    return (
+        <div className='main-home'>
+            <div classeName='ibagem-fundo'></div>
+            <h3 className='texto'>teste</h3>
         </div>
     )
 }
 
-
-export default Home
+export default Home;
