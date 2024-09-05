@@ -97,96 +97,17 @@ form {
   .btn-6 {
     background: rgb(250, 133, 0);
     background: radial-gradient(circle, rgb(250, 133, 0) 0%, rgb(255, 179, 15) 100%);
-    border-radius: 60px;
-    line-height: 42px;
-    padding: 0%;
-    border: none;
-    position: relative;
-    overflow: hidden; /* Oculta qualquer conteúdo que saia do botão */
+    border-radius: 16px;
+    line-height: 50%;
     color: white;
     font-size: 25px;
-    cursor: pointer;
     transition: color 0.3s ease;
-    width: 50%;
+    text-align: center;
+    width: 30%;
     display: block;
     margin: 0 auto;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
-  }
-  
-  .btn-6:before,
-  .btn-6:after {
-    position: absolute;
-    content: "";
-    width: 0%;
-    height: 2px; /* Ajuste conforme necessário */
-    background: rgba(255,255,255,0.7);
-    box-shadow:
-      -1px -1px 20px 0px rgba(255,255,255,0.7),
-      -4px -4px 5px 0px rgba(255,255,255,0.7),
-      7px 7px 20px 0px rgba(0,0,0,0.4),
-      4px 4px 5px 0px rgba(0,0,0,0.3);
-    transition: width 0.5s ease; /* Suaviza a expansão da linha */
-  }
-  
-  .btn-6:before {
-    top: 0;
-    left: 0;
-    transition: width 0.5s ease; /* Adiciona transição suave */
-  }
-  
-  .btn-6:after {
-    bottom: 0;
-    right: 0;
-    transition: width 0.5s ease; /* Adiciona transição suave */
-  }
-  
-  .btn-6:hover {
-    color: #ffffff;
-  }
-  
-  .btn-6:hover:before,
-  .btn-6:hover:after {
-    width: 100%;
-  }
-  
-  .btn-6 span {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .btn-6 span:before,
-  .btn-6 span:after {
-    position: absolute;
-    content: "";
-    background: rgba(255,255,255,0.7);
-    box-shadow:
-      -1px -1px 20px 0px rgba(255,255,255,0.7),
-      -4px -4px 5px 0px rgba(255,255,255,0.7),
-      7px 7px 20px 0px rgba(0,0,0,0.4),
-      4px 4px 5px 0px rgba(0,0,0,0.3);
-    transition: width 0.5s ease;
-  }
-  
-  .btn-6 span:before {
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 2px; /* Ajuste conforme necessário */
-  }
-  
-  .btn-6 span:after {
-    bottom: 0;
-    right: 0;
-    width: 0%;
-    height: 2px; /* Ajuste conforme necessário */
-  }
-  
-  .btn-6 span:hover:before,
-  .btn-6 span:hover:after {
-    width: 100%;
   }
   
   .entrar-conta {
