@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Anatolian+Hieroglyphs&display=swap');
+
+.main-inicio{
+    background-color: #ffffff;
+    margin: auto;
+}
+
+.texto{
+    color: white;
+    text-align: center;
+    position: relative;
+    top: 100%;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.imagem-fundo{
+    margin: auto;
+    display: block;
+    width: 205vh;
+}
+
+.btn-8 {
+    background: rgb(250, 133, 0);
+    background: radial-gradient(circle, rgb(250, 133, 0) 0%, rgb(255, 179, 15) 100%);
+    border-radius: 16px;
+    line-height: 42px;
+    color: white;
+    font-size: 25px;
+    transition: color 0.3s ease;
+    text-align: center;
+    width: 10%;
+    display: block;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+  }
+
+  /* CONTAINER PARA A PARTE DE BAIXO */
+
+.container-principal{
+    background-color: whitesmoke;
+    padding: 2.5%;
+    margin-bottom: 1%;
+
+}
+.img-acomodacao{
+    height: 15vw;
+}
+
+.texto-aco{
+    top: 107%;
+    right: 23%;
+    position: absolute;
+    min-height: 100px;
+    width: 50%;
+    font-family: "Noto Sans Anatolian Hieroglyphs", sans-serif;
+}
+
+.Pagamento{
+    top: 113%;
+    left: 84%;
+    position: absolute;
+    min-height: 100px;
+    width: 50%;
+    text-align: left;
+    font-family: "Noto Sans Anatolian Hieroglyphs", sans-serif;
+}
+
+.Valor{
+    top: 116%;
+    left: 82%;
+    position: absolute;
+    min-height: 100px;
+    width: 50%;
+    text-align: left;
+    font-family: "Noto Sans Anatolian Hieroglyphs", sans-serif;
+}

@@ -3,6 +3,7 @@ import Cadastro from './pages/Login/cadastro';
 import Login from './pages/Login/login';
 import Home from './pages/Home-Page/home';
 import Header from './components/Header';
+import Principal from './pages/Principal/Principal.jsx'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 
@@ -21,6 +22,9 @@ function App() {
 
         {/*Caminho Para a Home Page*/}
         <Route path="/" element={<Home/>}/>
+
+        {/*Caminho Para a Home Page*/}
+        <Route path="/inicio" element={<Principal/>}/>
 
       </Routes>
     </Router>
