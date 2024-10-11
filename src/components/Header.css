@@ -1,0 +1,39 @@
+/* Header.css */
+
+.body-header {
+    background-color: rgb(32, 0, 61);
+    color: #fff;
+    padding: 0rem 0rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.nav-link {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-right: 15px;
+}
+
+.nav-link:hover {
+    color: #FFD700;
+}
+
+.nav-link.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+    }
+}

@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import './Header.css';
 
 function Header() {
   return (
@@ -14,6 +15,7 @@ function Header() {
             <Nav.Link href="/inicio">Pagina Inicial</Nav.Link>
             <Nav.Link href="/contato">Contato</Nav.Link>
             <Nav.Link href="/cadastro">Entrar</Nav.Link>
+            
           </Nav>
         </Container>
       </Navbar>

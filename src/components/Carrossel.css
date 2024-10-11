@@ -1,0 +1,36 @@
+.carrossel-imagem {
+    width: 105%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.carousel-caption h5 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.carousel-caption p {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.carousel-caption {
+    background: rgba(135, 95, 95, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .carrossel-imagem {
+        height: 250px;
+    }
+
+    .carousel-caption h5 {
+        font-size: 1.2rem;
+    }
+
+    .carousel-caption p {
+        font-size: 0.9rem;
+    }
+}
