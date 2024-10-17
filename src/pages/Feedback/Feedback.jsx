@@ -1,85 +1,87 @@
 import React, { useState } from "react";
+import './Feedback.css';
 
 const Feedback = () => {
-  const [feedbackData, setFeedbackData] = useState({
-    rating: "",
-    comments: ""
+  const [dadosFeedback, setDadosFeedback] = useState({
+    avaliacao: "",
+    comentarios: ""
   });
 
-  const [formErrors, setFormErrors] = useState({
-    rating: "",
-    comments: ""
-  });
-
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errosFormulario, setErrosFormulario] = useState({});
+  const [enviado, setEnviado] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFeedbackData({ ...feedbackData, [name]: value });
+    setDadosFeedback({ ...dadosFeedback, [name]: value });
   };
 
-  const validate = () => {
-    let errors = {};
+  const handleAvaliacao = (valor) => {
+    setDadosFeedback({ ...dadosFeedback, avaliacao: valor });
+  };
 
-    if (!feedbackData.rating) {
-      errors.rating = "A avaliação é obrigatória.";
+  const validar = () => {
+    let erros = {};
+
+    if (!dadosFeedback.avaliacao) {
+      erros.avaliacao = "A avaliação é obrigatória.";
     }
 
-    if (!feedbackData.comments) {
-      errors.comments = "Os comentários são obrigatórios.";
+    if (!dadosFeedback.comentarios) {
+      erros.comentarios = "Os comentários são obrigatórios.";
     }
 
-    setFormErrors(errors);
-
-    return Object.keys(errors).length === 0;
+    setErrosFormulario(erros);
+    return Object.keys(erros).length === 0;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (validate()) {
-      console.log("Feedback enviado:", feedbackData);
-      setIsSubmitted(true);
+    if (validar()) {
+      console.log("Feedback enviado:", dadosFeedback);
+      setEnviado(true);
+      setDadosFeedback({ avaliacao: "", comentarios: "" }); // Resetar formulário
     }
   };
 
   return (
-    <div>
+    <div className="caixa-feedback">
       <h2>Deixe seu Feedback</h2>
-      {isSubmitted ? (
-        <div>
+      {enviado ? (
+        <div className="nota-agradecimento">
           <p>Obrigado pelo seu feedback!</p>
         </div>
       ) : (
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label>Avaliação (1 a 5):</label>
-            <select
-              name="rating"
-              value={feedbackData.rating}
-              onChange={handleChange}
-            >
-              <option value="">Selecione uma avaliação</option>
-              <option value="1">1 - Muito ruim</option>
-              <option value="2">2 - Ruim</option>
-              <option value="3">3 - Regular</option>
-              <option value="4">4 - Bom</option>
-              <option value="5">5 - Excelente</option>
-            </select>
-            {formErrors.rating && <span>{formErrors.rating}</span>}
+        <form onSubmit={handleSubmit} className="formulario-feedback">
+          <div className="grupo-avaliacao">
+            <label className="label-avaliacao">Avaliação:</label>
+            <div className="avaliacao-estrelas">
+              {[1, 2, 3, 4, 5].map((estrela) => (
+                <span
+                  key={estrela}
+                  className={`icone-estrela ${dadosFeedback.avaliacao >= estrela ? "estrela-preenchida" : ""}`}
+                  onClick={() => handleAvaliacao(estrela)}
+                >
+                  ★
+                </span>
+              ))}
+            </div>
+            {errosFormulario.avaliacao && <span className="mensagem-erro">{errosFormulario.avaliacao}</span>}
           </div>
 
-          <div>
-            <label>Comentários:</label>
+          <div className="grupo-comentarios">
+            <label className="label-comentarios">Comentários:</label>
             <textarea
-              name="comments"
-              value={feedbackData.comments}
+              name="comentarios"
+              value={dadosFeedback.comentarios}
               onChange={handleChange}
+              className="textarea-comentarios"
+              placeholder="Deixe seus comentários aqui..."
             />
-            {formErrors.comments && <span>{formErrors.comments}</span>}
+            {errosFormulario.comentarios && <span className="mensagem-erro">{errosFormulario.comentarios}</span>}
           </div>
 
-          <button type="submit">Enviar Feedback</button>
+          <button type="submit" className="botao-enviar">Enviar Feedback</button>
         </form>
       )}
     </div>

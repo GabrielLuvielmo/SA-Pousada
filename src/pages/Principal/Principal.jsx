@@ -24,7 +24,7 @@ function Principal() {
                     </div>
                     <div className='valordiv'>
                         <p className='Pagamento'>A partir de </p>
-                        <h1 className='Valor'>R$590</h1>
+                        <button className='Valor'>R$590</button>
                     </div>
             </div>
 
@@ -39,7 +39,7 @@ function Principal() {
                     </div>
                     <div className='valordiv'>
                         <p className='Pagamento'>A partir de </p>
-                        <h1 className='Valor'>R$450</h1>
+                        <button className='Valor'>R$450</button>
                     </div>
             </div>
             <div className="container-principal">
@@ -53,7 +53,7 @@ function Principal() {
                     </div>
                     <div className='valordiv'>
                         <p className='Pagamento'>A partir de </p>
-                        <h1 className='Valor'>R$380</h1>
+                        <button className='Valor'>R$380</button>
                     </div>
             </div>   
             <div className="container-principal">
@@ -67,7 +67,7 @@ function Principal() {
                     </div>
                     <div className='valordiv'>
                         <p className='Pagamento'>A partir de </p>
-                        <h1 className='Valor'>R$250</h1>
+                        <button className='Valor'>R$250</button>
                     </div>
             </div>
             <div className="container-principal">
@@ -81,7 +81,7 @@ function Principal() {
                     </div>
                     <div className='valordiv'>
                         <p className='Pagamento'>A partir de </p>
-                        <h1 className='Valor'>R$620</h1>
+                        <button className='Valor'>R$620</button>
                     </div>
                       
             </div>

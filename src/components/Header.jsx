@@ -15,6 +15,7 @@ function Header() {
             <Nav.Link href="/inicio">Pagina Inicial</Nav.Link>
             <Nav.Link href="/contato">Contato</Nav.Link>
             <Nav.Link href="/cadastro">Entrar</Nav.Link>
+            <Nav.Link href="/feedback">Feedback</Nav.Link>
             
           </Nav>
         </Container>

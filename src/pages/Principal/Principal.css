@@ -78,7 +78,7 @@
     text-align: left;
     font-family: "Noto Sans Anatolian Hieroglyphs", sans-serif;
 }
-h1.Valor{
+button.Valor{
     color: rgb(0, 0, 0);
     background-color: rgb(196, 135, 61);
     max-width: fit-content;
