@@ -6,6 +6,12 @@ import Feedback from './pages/Feedback/Feedback.jsx';
 import Contato from './pages/Contato/Contato.jsx';
 import Header from './components/Header';
 import Principal from './pages/Principal/Principal.jsx'
+import Cabana from './pages/Reservas/cabana.jsx'
+import ChaleFamilia from './pages/Reservas/chalefamilia.jsx'
+import SuiteComCozinha from './pages/Reservas/suitecomcozinha.jsx'
+import Charua from './pages/Reservas/charua.jsx'
+import Domo from './pages/Reservas/domo.jsx'
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 
@@ -31,8 +37,23 @@ function App() {
         {/*Caminho Para a Pagina de Contato*/}
         <Route path="/contato" element={<Contato/>}/>
 
-        {/*Caminho Para a Pagina de Feedback - Atualmente não Implementada no Site*/}
+        {/*Caminho Para a Pagina de Feedback - Atualmente Implementada no Site*/}
         <Route path="/feedback" element={<Feedback/>}/>
+
+        {/*Caminho Para a Pagina da cabana*/}
+        <Route path="/cabana" element={<Cabana/>}/>
+
+        {/*Caminho Para a Pagina do Chalé*/}
+        <Route path="/chalefamilia" element={<ChaleFamilia/>}/>
+
+        {/*Caminho Para a Pagina da Suite Com Cozinha*/}
+        <Route path="/suitecomcozinha" element={<SuiteComCozinha/>}/>
+        
+        {/*Caminho Para a Pagina do Domo*/}
+        <Route path="/domo" element={<Domo/>}/>
+
+        {/*Caminho Para a Pagina da Charua*/}
+        <Route path="/charua" element={<Charua/>}/>
 
       </Routes>
     </Router>

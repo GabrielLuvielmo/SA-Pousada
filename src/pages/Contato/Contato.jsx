@@ -58,56 +58,58 @@ const Contato = () => {
   };
 
   return (
-    <div className='div-contato'>
-      <h2 >Entre em Contato</h2>
-      <form onSubmit={handleSubmit}>
-        <div className='campo-contato'>
-          <label className="Contato-Label" htmlFor="name">Nome</label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Nome para Contato"
-            value={formData.name}
-            onChange={handleChange}
-            className={formErrors.name ? 'erro' : ''}
-          />
-          {formErrors.name && <span className="erro">{formErrors.name}</span>}
-        </div>
+    <div className='pagina-contato'>
+      <div className='div-contato'>
+        <h2 className='h2-contato'>Entre em Contato</h2>
+        <form onSubmit={handleSubmit}>
+          <div className='campo-contato'>
+            <label className="Contato-Label" htmlFor="name">Nome</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Nome para Contato"
+              value={formData.name}
+              onChange={handleChange}
+              className={formErrors.name ? 'erro' : ''}
+            />
+            {formErrors.name && <span className="erro">{formErrors.name}</span>}
+          </div>
 
-        <div className='campo-contato'>
-          <label className="Contato-Label" htmlFor="email">Email</label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Email para Contato"
-            value={formData.email}
-            onChange={handleChange}
-            className={formErrors.email ? 'erro' : ''}
-          />
-          {formErrors.email && <span className="erro">{formErrors.email}</span>}
-        </div>
+          <div className='campo-contato'>
+            <label className="Contato-Label" htmlFor="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email para Contato"
+              value={formData.email}
+              onChange={handleChange}
+              className={formErrors.email ? 'erro' : ''}
+            />
+            {formErrors.email && <span className="erro">{formErrors.email}</span>}
+          </div>
 
-        <div className='campo-contato'>
-          <label className="Contato-Label" htmlFor="message">Mensagem</label>
-          <textarea
-            name="message"
-            id="message"
-            placeholder="Digite aqui a sua mensagem..."
-            value={formData.message}
-            onChange={handleChange}
-            className={formErrors.message ? 'erro' : ''}
-          />
-          {formErrors.message && <span className="erro">{formErrors.message}</span>}
-        </div>
+          <div className='campo-contato'>
+            <label className="Contato-Label" htmlFor="message">Mensagem</label>
+            <textarea
+              name="message"
+              id="message"
+              placeholder="Digite aqui a sua mensagem..."
+              value={formData.message}
+              onChange={handleChange}
+              className={formErrors.message ? 'erro' : ''}
+            />
+            {formErrors.message && <span className="erro">{formErrors.message}</span>}
+          </div>
 
-        <button type="submit" className='botao-contato' disabled={loading}>
-          {loading ? 'Enviando...' : 'Enviar'}
-        </button>
+          <button type="submit" className='botao-contato' disabled={loading}>
+            {loading ? 'Enviando...' : 'Enviar'}
+          </button>
 
-        {successMessage && <div className="sucesso">{successMessage}</div>}
-      </form>
+          {successMessage && <div className="sucesso">{successMessage}</div>}
+        </form>
+      </div>
     </div>
   );
 };

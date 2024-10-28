@@ -56,7 +56,7 @@ const Feedback = () => {
           <div className="grupo-avaliacao">
             <label className="label-avaliacao">Avaliação:</label>
             <div className="avaliacao-estrelas">
-              {[1, 2, 3, 4, 5].map((estrela) => (
+              {[5, 4, 3, 2, 1].map((estrela) => (
                 <span
                   key={estrela}
                   className={`icone-estrela ${dadosFeedback.avaliacao >= estrela ? "estrela-preenchida" : ""}`}

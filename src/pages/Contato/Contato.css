@@ -1,85 +1,82 @@
-body {
-    background-color: #2f66b8; 
-    font-family: 'Arial', sans-serif;
-    color: #ffffff; 
-  }
-  
-  .div-contato {
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); 
-    background-color: #ffffff;
-  }
-  
-  h2 {
-    text-align: center;
-    color: #2f66b8; 
-    margin-bottom: 20px;
-    font-size: 24px; 
-    font-weight: bold;
-  }
-  
-  .campo-contato {
-    margin-bottom: 25px;
-  }
-  
-  .Contato-Label{
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #2f66b8; 
-  }
-  
-  input, textarea {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 6px; 
-    font-size: 16px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  input:focus, textarea:focus {
-    border-color: #2f66b8; 
-    outline: none;
-    box-shadow: 0 0 8px rgba(47, 102, 184, 0.5); 
-  }
-  
-  span.erro {
-    color: red;
-    font-size: 14px;
-    margin-top: 5px;
-    display: block;
-  }
-  
-  .sucesso {
-    margin-top: 10px;
-    color: green;
-    font-size: 16px;
-    text-align: center;
-  }
-  
-  .botao-contato {
-    width: 100%;
-    padding: 15px;
-    background-color:rgb(250, 133, 0); 
-    color: white;
-    border: none;
-    border-radius: 6px; 
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  .botao-contato:hover {
-    background-color: #0056b3; 
-    transform: translateY(-3px); 
-  }
-  
-  .botao-contato:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
-  
+.div-contato {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Sombra mais forte */
+  background-color: #2F2F55; /* Fundo branco para o formulário */
+}
+
+.h2-contato {
+  text-align: center;
+  color: #ffffff; /* Azul vibrante */
+  margin-bottom: 20px;
+  font-size: 40px; 
+  font-weight: bold;
+}
+
+.campo-contato {
+  margin-bottom: 25px;
+}
+
+.Contato-Label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #ffffff; /* Azul consistente com o título */
+}
+
+input, textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px; 
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: #2f66b8; /* Foco azul */
+  outline: none;
+  box-shadow: 0 0 8px rgba(47, 102, 184, 0.5); /* Sombra azul no foco */
+}
+
+span.erro {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+  display: block;
+}
+
+.sucesso {
+  margin-top: 10px;
+  color: green;
+  font-size: 16px;
+  text-align: center;
+}
+
+.botao-contato {
+  width: 100%;
+  padding: 15px;
+  background-color: #fa8500; /* Laranja para cor do botão */
+  color: white;
+  border: none;
+  border-radius: 6px; 
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.botao-contato:hover {
+  background-color: #d77300; /* Laranja mais escuro ao passar o mouse */
+  transform: translateY(-3px); /* Efeito de elevação */
+}
+
+.botao-contato:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+#root{ 
+  background-image: url(/images/fundo-pousada.png);
+  height: 100vh;
+}

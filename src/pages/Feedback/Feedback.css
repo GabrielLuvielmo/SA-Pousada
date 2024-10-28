@@ -5,12 +5,12 @@
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(135deg, #ffffff, #bbdefb);
+    background-color: #2F2F55;
 }
 
 .caixa-feedback h2 {
     text-align: center;
-    color: #1976d2;
+    color: #fefefe;
     margin-bottom: 20px;
     font-size: 28px;
     font-weight: bold;
@@ -26,7 +26,7 @@
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
-    color: #1976d2;
+    color: #ffffff;
 }
 
 .caixa-feedback .avaliacao-estrelas {
@@ -52,12 +52,16 @@
 }
 
 .caixa-feedback .textarea-comentarios {
-    width: 100%;
-    padding: 12px;
+    width: 100%; /* Ajusta para 100% da largura do container */
+    max-width: 560px; /* Define um limite de largura */
+    min-height: 100px; /* Altura mínima para o textarea */
+    padding: 12px; /* Ajuste o preenchimento para mais conforto */
     border: 2px solid #ccc;
     border-radius: 10px;
     font-size: 16px;
     transition: border-color 0.3s, box-shadow 0.3s;
+    resize: none; /* Desabilita a redimensionamento do textarea */
+    overflow: auto; /* Adiciona barras de rolagem se necessário */
 }
 
 .caixa-feedback .textarea-comentarios:focus {
@@ -81,7 +85,7 @@
 .caixa-feedback .botao-enviar {
     width: 100%;
     padding: 15px;
-    background-color: #1976d2;
+    background-color: #fa8500;
     color: white;
     border: none;
     border-radius: 10px;
@@ -91,6 +95,6 @@
 }
 
 .caixa-feedback .botao-enviar:hover {
-    background-color: #1565c0;
+    background-color: #d77300;
     transform: translateY(-2px);
 }
