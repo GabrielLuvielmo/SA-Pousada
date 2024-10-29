@@ -1,11 +1,12 @@
 /* CSS para o componente de Feedback */
 .caixa-feedback {
     max-width: 600px;
-    margin: 20px auto; /* Ajuste a margem para evitar conflitos */
+    margin: 20px auto; 
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
     background-color: #2F2F55;
+    margin-top: 1.5vh;
 }
 
 .caixa-feedback h2 {
@@ -36,7 +37,7 @@
 }
 
 .caixa-feedback .icone-estrela {
-    font-size: 50px; /* Aumentar o tamanho das estrelas */
+    font-size: 50px;
     color: #ccc;
     transition: color 0.2s, transform 0.2s;
 }
@@ -45,23 +46,31 @@
     color: #fbc02d;
 }
 
+
 .caixa-feedback .icone-estrela:hover,
 .caixa-feedback .icone-estrela:hover ~ .icone-estrela {
-    color: #fbc02d; /* Muda a cor das estrelas ao passar o mouse */
-    transform: scale(1.2); /* Aumenta o tamanho da estrela */
+    color: #fbc02d;
+    transform: scale(1.2);
 }
 
+/* Remove o efeito das estrelas à direita do item hover */
+.caixa-feedback .icone-estrela:hover ~ .icone-estrela {
+    color: #ccc;
+    transform: scale(1.2);
+}
+
+
 .caixa-feedback .textarea-comentarios {
-    width: 100%; /* Ajusta para 100% da largura do container */
-    max-width: 560px; /* Define um limite de largura */
-    min-height: 100px; /* Altura mínima para o textarea */
-    padding: 12px; /* Ajuste o preenchimento para mais conforto */
+    width: 100%; 
+    max-width: 560px; 
+    min-height: 100px; 
+    padding: 12px; 
     border: 2px solid #ccc;
     border-radius: 10px;
     font-size: 16px;
     transition: border-color 0.3s, box-shadow 0.3s;
-    resize: none; /* Desabilita a redimensionamento do textarea */
-    overflow: auto; /* Adiciona barras de rolagem se necessário */
+    resize: none; 
+    
 }
 
 .caixa-feedback .textarea-comentarios:focus {

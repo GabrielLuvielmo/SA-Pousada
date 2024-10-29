@@ -11,7 +11,7 @@ const Charua = () => {
         alt="Domo" 
       />
       <div className='texto-aco'>
-        <h2><strong>Charua</strong></h2>
+        <h2><strong>Charrua</strong></h2>
         <p>
           Obs: Os valores exibidos no site estão sujeitos a constantes atualizações.
           Nos feriados e datas comemorativas, o valor da diária também é diferenciado.
@@ -28,7 +28,7 @@ const Charua = () => {
 
       {/* Seção de Reserva */}
       <div className="reservar">
-        <h3>Reservar Charua</h3>
+        <h3>Reservar Charrua</h3>
         <p>Preço da diária: R$ 500,00</p>
         <button className="botao-reserva">
           Reservar Agora

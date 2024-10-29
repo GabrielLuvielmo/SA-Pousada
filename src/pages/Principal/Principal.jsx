@@ -31,7 +31,7 @@ function Principal() {
             <div className="container-principal">
                 <img className='img-acomodacao' src="../../../images/charuabus.jpeg" alt="Imagem do Charua" />
                 <div className='texto-aco'>
-                    <h2><strong>Charua</strong></h2>
+                    <h2><strong>Charrua</strong></h2>
                     <p>Obs: Os valores exibidos no site estão sujeitos a constantes atualizações.
                         Nos feriados e datas comemorativas o valor da diária também é diferenciado.</p>
                     <li>Camas: 1 Casal</li>

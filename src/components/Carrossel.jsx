@@ -11,8 +11,8 @@ function Carrossel() {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h5>First slide label</h5>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h5>Chalé Família</h5>
+          <p>Um chalé acolhedor, perfeito para criar memórias inesquecíveis ao lado de quem você ama..</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -22,32 +22,32 @@ function Carrossel() {
           alt="Second slide"
         />
         <Carousel.Caption>
-          <h5>Second slide label</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h5>Cabana</h5>
+          <p>Cabana rústica e aconchegante, perfeita para relaxar e se reconectar com a natureza.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <img
           className="carrossel-imagem"
-          src="/images/chalefamilia.jpg" //Link do diretorio da terceira imagem do carrossel
+          src="/images/domo2.jpeg" //Link do diretorio da terceira imagem do carrossel
           alt="Third slide"
         />
         <Carousel.Caption>
-          <h5>Chalé Fámilia</h5>
+          <h5>Domo</h5>
           <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+          Domo elegante e diferenciado, projetado para quem busca uma conexão profunda com a natureza sem abrir mão do conforto.
           </p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <img
           className="carrossel-imagem"
-          src="/images/cabana.jpg" //Link do diretorio da segunda imagem do carrossel
+          src="/images/charuabus.jpeg" //Link do diretorio da segunda imagem do carrossel
           alt="Second slide"
         />
         <Carousel.Caption>
-          <h5>Second slide label</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h5>Charrua</h5>
+          <p>Charrua acolhedora, onde tradição e charme se unem para momentos especiais em meio à tranquilidade do campo.</p>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
