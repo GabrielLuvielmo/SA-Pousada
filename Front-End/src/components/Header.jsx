@@ -12,7 +12,7 @@ function Header() {
         <Container>
           <Navbar.Brand href="/">Quinta do Ypuã</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="/inicio">Pagina Inicial</Nav.Link>
+            <Nav.Link href="/inicio">Página Inicial</Nav.Link>
             <Nav.Link href="/contato">Contato</Nav.Link>
             <Nav.Link href="/cadastro">Entrar</Nav.Link>
             <Nav.Link href="/feedback">Feedback</Nav.Link>

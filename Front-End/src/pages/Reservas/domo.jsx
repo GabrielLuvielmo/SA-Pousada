@@ -1,16 +1,16 @@
 import React from 'react';
-import './Reservas.css'; // Supondo que você tenha um arquivo CSS para estilização
+import './Reservas.css'; 
 import { Link } from 'react-router-dom';
 
-const Cabana = () => {
+const Domo = () => {
   return (
     <div className="container-principal">
       <img 
-        className='img-acomodacao' 
-        src="../../../images/domo.jpeg" //alterar dps
+        className='img-acomodacao-outro' 
+        src="../../../images/domo.jpeg" 
         alt="Domo" 
       />
-      <div className='texto-aco'>
+      <div className='texto-aco-outro'>
         <h2><strong>Domo</strong></h2>
         <p>
           Obs: Os valores exibidos no site estão sujeitos a constantes atualizações.
@@ -18,17 +18,21 @@ const Cabana = () => {
         </p>
         <ul>
           <li>Camas: 1 Casal</li>
-          <li>Capacidade: 2 pessoas</li>
+          <li>Capacidade: 3 pessoas</li>
           <li>Banheiro privativo</li>
           <li>Ar-condicionado</li>
           <li>Wi-Fi gratuito</li>
+          <li>Cozinha</li>
+          <li>Ducha</li>
+          <li>Toalhas</li>
+          <li>TV Inclusa</li>
         </ul>
         <hr />
       </div>
 
       {/* Seção de Reserva */}
       <div className="reservar">
-        <h3>Reservar a Cabana</h3>
+        <h3>Reservar o Domo</h3>
         <p>Preço da diária: R$ 500,00</p>
         <button className="botao-reserva">
           Reservar Agora
@@ -38,4 +42,4 @@ const Cabana = () => {
   );
 };
 
-export default Cabana;
+export default Domo;

@@ -1,0 +1,23 @@
+.botao-reserva{
+
+    margin-top: 0.5vh;
+    color: black;
+    background-color: rgb(250, 133, 0);
+    font-size: 2vh;
+}
+
+.texto-aco-outro{
+    margin-top: 17vh;
+}
+
+.reservar{
+    margin-top: 44vh;
+    margin-left: -26.5vh;
+    text-align: right;
+}
+
+.img-acomodacao-outro{
+    margin-top: 20vh;
+    height: 20vw;
+    border-radius: 2vh;
+}

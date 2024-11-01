@@ -20,11 +20,12 @@ function Principal() {
                 </div>
                 <div className='valordiv'>
                     <p className='Pagamento'>A partir de </p>
-                    <button className='Valor'>R$590</button>
+                    <p className='Valor-domo'>R$590</p>
                     <br />
                     <Link to="/domo">
                         <button className='Valor'>Reservar</button>
                     </Link>
+                
                 </div>
             </div>
 
@@ -39,7 +40,7 @@ function Principal() {
                 </div>
                 <div className='valordiv'>
                     <p className='Pagamento'>A partir de </p>
-                    <button className='Valor'>R$450</button>
+                    <p className='Valor-domo'>R$450</p>
                     <br />
                     <Link to="/charua">
                         <button className='Valor'>Reservar</button>
@@ -58,7 +59,7 @@ function Principal() {
                 </div>
                 <div className='valordiv'>
                     <p className='Pagamento'>A partir de </p>
-                    <button className='Valor'>R$380</button>
+                    <p className='Valor-domo'>R$380</p>
                     <br />
                     <Link to="/suitecomcozinha">
                         <button className='Valor'>Reservar</button>
@@ -77,10 +78,10 @@ function Principal() {
                 </div>
                 <div className='valordiv'>
                     <p className='Pagamento'>A partir de </p>
-                    <button className='Valor'>R$250</button>
+                    <p className='Valor-domo'>R$250</p>
                     <br />
                     <Link to="/chalefamilia">
-                        <button className='Valor'>Reservar</button>
+                    <button className='Valor'>Reservar</button>
                     </Link>
                 </div>
             </div>
@@ -96,7 +97,7 @@ function Principal() {
                 </div>
                 <div className='valordiv'>
                     <p className='Pagamento'>A partir de </p>
-                    <button className='Valor'>R$620</button>
+                    <p className='Valor-domo'>R$590</p>
                     <br />
                     <Link to="/cabana">
                         <button className='Valor'>Reservar</button>

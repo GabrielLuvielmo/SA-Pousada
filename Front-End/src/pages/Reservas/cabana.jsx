@@ -1,16 +1,16 @@
 import React from 'react';
-import './Reservas.css'; 
+import './Reservas.css'; // Supondo que você tenha um arquivo CSS para estilização
 import { Link } from 'react-router-dom';
 
-const Domo = () => {
+const Cabana = () => {
   return (
     <div className="container-principal">
       <img 
-        className='img-acomodacao' 
-        src="../../../images/domo.jpeg" 
+        className='img-acomodacao-outro' 
+        src="../../../images/domo.jpeg" //alterar dps
         alt="Domo" 
       />
-      <div className='texto-aco'>
+      <div className='texto-aco-outro'>
         <h2><strong>Domo</strong></h2>
         <p>
           Obs: Os valores exibidos no site estão sujeitos a constantes atualizações.
@@ -28,7 +28,7 @@ const Domo = () => {
 
       {/* Seção de Reserva */}
       <div className="reservar">
-        <h3>Reservar o Domo</h3>
+        <h3>Reservar a Cabana</h3>
         <p>Preço da diária: R$ 500,00</p>
         <button className="botao-reserva">
           Reservar Agora
@@ -38,4 +38,4 @@ const Domo = () => {
   );
 };
 
-export default Domo;
+export default Cabana;

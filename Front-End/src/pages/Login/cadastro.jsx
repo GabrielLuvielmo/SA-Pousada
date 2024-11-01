@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './login.css';
-import { FaGoogle, FaFacebook } from "react-icons/fa";
 import Login from './login';
 import { Link } from 'react-router-dom';
 
@@ -86,11 +85,6 @@ const Cadastro = () => {
               Cadastrar
             </button>
             <h5 className="ja">Já Possui Conta? <Link to="/login" className='entrar'>Entrar</Link></h5>
-          
-            <div className='container-logos'>
-              <FaGoogle /> 
-              <FaFacebook />
-            </div>
           </form>
           {submitted && !error && <div className='success-message'>Cadastro realizado com sucesso!</div>}
           {error && <div className='error-message'>{error}</div>}

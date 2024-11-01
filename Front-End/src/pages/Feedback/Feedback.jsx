@@ -45,6 +45,7 @@ const Feedback = () => {
   };
 
   return (
+  <div className="Fundo-FeedBack">
     <div className="caixa-feedback">
       <h2>Deixe seu Feedback</h2>
       {enviado ? (
@@ -56,7 +57,7 @@ const Feedback = () => {
           <div className="grupo-avaliacao">
             <label className="label-avaliacao">Avaliação:</label>
             <div className="avaliacao-estrelas">
-              {[5, 4, 3, 2, 1].map((estrela) => (
+              {[1, 2, 3, 4, 5].map((estrela) => (
                 <span
                   key={estrela}
                   className={`icone-estrela ${dadosFeedback.avaliacao >= estrela ? "estrela-preenchida" : ""}`}
@@ -85,6 +86,7 @@ const Feedback = () => {
         </form>
       )}
     </div>
+  </div>
   );
 };
 

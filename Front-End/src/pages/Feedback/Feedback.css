@@ -1,4 +1,13 @@
 /* CSS para o componente de Feedback */
+.Fundo-FeedBack{
+    background-image: url(/images/fundo-pousada.png);
+    width: 100vw;
+    height: 100vh;
+    background-size: 100%;
+    background-position: center;
+    margin: 0;
+}
+
 .caixa-feedback {
     max-width: 600px;
     margin: 20px auto; 
@@ -7,6 +16,7 @@
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
     background-color: #2F2F55;
     margin-top: 1.5vh;
+    
 }
 
 .caixa-feedback h2 {

@@ -9,8 +9,9 @@ import Principal from './pages/Principal/Principal.jsx'
 import Cabana from './pages/Reservas/cabana.jsx'
 import ChaleFamilia from './pages/Reservas/chalefamilia.jsx'
 import SuiteComCozinha from './pages/Reservas/suitecomcozinha.jsx'
-import Charua from './pages/Reservas/charua.jsx'
+import Charrua from './pages/Reservas/charua.jsx'
 import Domo from './pages/Reservas/domo.jsx'
+import Pagamento from './pages/Reservas/pagamento.jsx'
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -52,8 +53,12 @@ function App() {
         {/*Caminho Para a Pagina do Domo*/}
         <Route path="/domo" element={<Domo/>}/>
 
-        {/*Caminho Para a Pagina da Charua*/}
-        <Route path="/charua" element={<Charua/>}/>
+        {/*Caminho Para a Pagina da Charrua*/}
+        <Route path="/charua" element={<Charrua/>}/>
+
+          {/*Caminho Para a Pagina do Pagamento*/}
+          <Route path="/pagamento" element={<Pagamento/>}/>
+
 
       </Routes>
     </Router>

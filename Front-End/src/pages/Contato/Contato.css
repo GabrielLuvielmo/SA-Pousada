@@ -76,7 +76,7 @@ span.erro {
   background-color: #ccc;
   cursor: not-allowed;
 }
-#root{ 
+.pagina-contato{ 
   background-image: url(/images/fundo-pousada.png);
   height: 100vh;
 }
