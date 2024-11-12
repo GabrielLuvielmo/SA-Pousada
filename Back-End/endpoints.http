@@ -28,3 +28,43 @@ Content-Type: application/json
 ###
 
 DELETE http://localhost:3333/Usuario/id
+
+###
+
+
+GET http://localhost:3333/Reserva
+
+###
+
+
+POST http://localhost:3333/Reserva
+
+Content-Type: application/json
+
+{
+    "dataInicio": "2025-02-12",
+    "dataFim": "2025-02-16",
+    "quartoReserva": "Domo",
+
+    
+}
+
+###
+
+POST http://localhost:3333/Reserva/id
+
+Content-Type: application/json
+
+{
+    "dataInicio": "2026-03-22",
+    "dataFim": "2026-03-26",
+    "quartoReserva": "Cabana",
+
+    
+}
+
+###
+
+DELETE http://localhost:3333/Reserva/id
+
+###

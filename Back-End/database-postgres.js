@@ -2,8 +2,11 @@ import { randomUUID } from "crypto";
 import { sql } from './db.js';
 
 export class DatabasePostgres { 
+
+  //DATABASE -- USUARIOS --
+
   async listUsuario() {
-    const usuarios = await sql`select * from Usuarios`;
+    const usuarios = await sql`select * from Usuario`;
     return usuarios;
   }
 
@@ -30,6 +33,41 @@ export class DatabasePostgres {
 
   async deleteUsuario(idUsuario) {
     await sql`delete from Usuario where id = ${idUsuario}`
+  }
+ 
+  // DATABASE -- RESERVAS --
+
+  async listReserva() {
+    const reservas = await sql`select * from Reserva`;
+    return reservas;
+  }
+
+  async createReserva(Reserva) {
+    const idReserva = randomUUID();
+    console.log('id', id);
+    const dataInicio = Reserva.datai;
+    const dataFim = Reserva.dataf;
+    const quartoReserva = Reserva.quarto;
+    
+    await sql`insert into Reserva (idReserva, dataInicio, dataFim, quartoReserva)
+    values (${idReserva}, ${dataInicio}, ${dataFim}, ${quartoReserva})`
+  }
+
+  async updateReserva(idReserva, Reserva) {
+    const dataInicio = Reserva.datai;
+    const dataFim = Reserva.dataf;
+    const quartoReserva = Reserva.quarto;
+
+    await sql`update Reserva set 
+        dataInicio = ${dataInicio},
+        dataFim = ${dataFim}
+        quartoReserva = ${quartoReserva}
+        where idReserva = ${idReserva}
+    `;
+  }
+
+  async deleteReserva(idReserva) {
+    await sql`delete from Reserva where id = ${idReserva}`
   }
 
 }

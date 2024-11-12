@@ -11,7 +11,7 @@ server.register(cors, {
     methods: ['GET', 'POST', 'PUT', 'DELETE']
 })
 
-// ENDPOINTS (CRUD):
+// ENDPOINTS - Usuario (CRUD):
 
 // CREATE
 server.post('/Usuario', async (request, reply) => {
@@ -33,7 +33,7 @@ server.post('/Usuario', async (request, reply) => {
     }
 })
 
-// READE
+// READ
 server.get('/Usuario', async () => {
     const usuario = await databasePostgres.listUsuario();
     return usuario;
@@ -67,6 +67,75 @@ server.put('/Usuario/:id', async (request, reply) => {
 server.delete('/Usuario/:id', async (request, reply) => {
     const idUsuario = request.params.id;
     await databasePostgres.deleteUsuario(idUsuario);
+
+    return reply.status(204).send();
+})
+
+// ENDPOINTS - Reserva (CRUD):
+
+// CREATE
+server.post('/Reserva', async (request, reply) => {
+    const body = request.body;
+    let error = {};
+
+    if (!body.datai) {
+        error.datai = 'Erro na Data de Inicio'
+    }
+    if (!body.dataf) {
+        error.dataf = 'Erro na Data Final'
+    }
+
+    if (!body.quarto) {
+        error.quarto = 'Erro na reserva do Quarto'
+    }
+
+    if (body.datai && body.dataf && body.quarto){
+        await databasePostgres.createReserva(body);
+        return reply.status(201).send('Reserva Realizada com Sucesso');
+    } else {
+        return reply.status(400).send(error);
+    }
+})
+
+// READ
+server.get('/Reserva', async () => {
+    const reserva = await databasePostgres.listReserva();
+    return reserva;
+});
+
+// UPDATE
+server.put('/Reserva/:id', async (request, reply) => {
+    const idReserva = request.params.id;
+    const body = request.body;
+    let error = {};
+
+    if (!body.datai) {
+        error.datai = 'Erro na Data Inicial'
+    }
+    if (!body.dataf) {
+        error.dataf = 'Erro na Data Final'
+    }
+
+    if (!body.quarto){
+        error.quarto = 'Erro no numero do Quarto'
+    }
+
+    if (!idReserva) {
+        error.idReserva = 'Faltou o ID da Reserva!'
+    }
+
+    if (body.datai && body.dataf && body.quarto && idReserva){
+        await databasePostgres.updateReserva(idReserva, body);
+        return reply.status(204).send();
+    } else {
+        return reply.status(400).send(error);
+    }    
+})
+
+// DELETE
+server.delete('/Reserva/:id', async (request, reply) => {
+    const idReserva = request.params.id;
+    await databasePostgres.deleteReserva(idReserva);
 
     return reply.status(204).send();
 })
