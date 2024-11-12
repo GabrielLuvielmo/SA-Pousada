@@ -13,7 +13,7 @@ function Home(){
             <br />
                 
             <div className="container-texto">
-            <h3 className='texto'>
+            <h3 className='texto-h3'>
                 A pousada Quinta do Ypuã oferece ao seus clientes um recanto de aconchego e lazer, em ambiente  
                 rústico e agradável.  Ideal para quem gosta de fugir da rotina e procura um local de paz para descansar e curtir a natureza.
                  <b>"O Ypuã tem tudo a ver com a natureza, dá para sentir a energia do lugar. Eu me preocupo se você vai comer bem,

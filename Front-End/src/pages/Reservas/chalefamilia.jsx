@@ -10,8 +10,8 @@ const ChaleFamilia = () => {
         src="../../../images/chalefamilia.jpg" 
         alt="Domo" 
       />
-    <div className='pgn-domo'>
-      <h2 className='h2-domo'><strong>Charrua</strong></h2>
+      <div className='texto-aco-outro'>
+        <h2><strong>Chalé Família</strong></h2>
         <p>
           Obs: Os valores exibidos no site estão sujeitos a constantes atualizações.
           Nos feriados e datas comemorativas, o valor da diária também é diferenciado.
@@ -25,15 +25,16 @@ const ChaleFamilia = () => {
           <li>Wi-Fi gratuito</li>
           <li>Cozinha Incluída</li>
         </ul>
+        <hr />
       </div>
 
       {/* Seção de Reserva */}
       <div className="reservar">
         <h3>Reservar o Chalé </h3>
-        <p >Preço da diária: <strong>R$ 500,00</strong></p>
-        <Link to="/pagamento">
-      <button className="botao-reserva">Reservar Agora</button>
-    </Link>
+        <p className="preco-diaria">Preço da diária: <strong>R$ 500,00</strong></p>
+        <Link to="/pagamento" className="botao-reserva">
+          Reservar Agora
+        </Link>
       </div>
     </div>
   );

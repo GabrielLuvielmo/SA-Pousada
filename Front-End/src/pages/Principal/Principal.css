@@ -48,9 +48,9 @@
     gap: 2rem;
 }
 .img-acomodacao{
-    margin-top: 10vh;
-    width: 400px;
-    height: 32vh;
+    margin-top: 11vh;
+    width: auto;
+    height: 20vh;
     border-radius: 2vh;
 }
 
@@ -82,43 +82,29 @@
     padding: 4%;
 
 }
-.Valor-domo-botao {
-    background-color: #2f2f2f; /* Cor sóbria e elegante */
-    color: #ffffff; /* Texto branco para contraste */
-    font-size: 16px; /* Fonte menor para um botão mais compacto */
-    font-weight: 500;
-    padding: 10px 20px; /* Menos padding para diminuir o tamanho */
-    border-radius: 30px; /* Bordas arredondadas para um visual mais suave */
-    border: 2px solid #444; /* Cor de borda discreta */
-    text-transform: uppercase; /* Maiúsculas para um visual mais forte */
+   .Valor-domo-botao{
+    margin-left: 6vh;
+    margin-top: -4vh;
+     width: 15vh;
+    height: 6.5vh;
+    display: flex;              
+    align-items: center;         
+    justify-content: center;     
+    background: rgb(250, 133, 0);
+    background: radial-gradient(circle, rgb(250, 133, 0) 0%, rgb(255, 179, 15) 100%);
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 16px; 
+    font-size: 2.5vh;
     cursor: pointer;
-    outline: none;
-    transition: all 0.3s ease-in-out; /* Transições suaves */
-    position: relative;
-}
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .Valor-domo-botao {
+    background-color: #f9ed00; 
+    transform: translateY(-3px); 
+  }
 
-.Valor-domo-botao:hover {
-    background-color: #444; /* Cor de fundo mais clara no hover */
-    border-color: #ff6a00; /* Cor de borda laranja no hover */
-    color: #ff6a00; /* Cor do texto laranja ao passar o mouse */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave ao passar o mouse */
-}
-
-.Valor-domo-botao:active {
-    background-color: #3c3c3c; /* Fundo ainda mais escuro ao clicar */
-    border-color: #e07b00; /* Borda mais clara ao clicar */
-    transform: translateY(2px); /* Leve compressão no clique */
-}
-
-.Valor-domo-botao span {
-    position: relative;
-    z-index: 1;
-    transition: color 0.3s ease-in-out;
-}
-
-.Valor-domo-botao:hover span {
-    color: #ff6a00; /* Cor do texto laranja suave ao passar o mouse */
-}
 
  /*Parte das outras acomodações*/
  .Pagamento, .Valor-geral{
@@ -149,7 +135,7 @@
   }
   
   .Valor {
-    background-color: #00ffd9; 
+    background-color: #f9ed00; 
     transform: translateY(-3px); 
   }
 

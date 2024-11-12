@@ -100,7 +100,7 @@ const Pagamento = () => {
             value={cvv} 
             onChange={(e) => setCvv(e.target.value.replace(/\D/g, ''))} 
             required 
-            maxLength="3"
+            maxLength="4"
             placeholder="000"
           />
         </div>
@@ -108,7 +108,7 @@ const Pagamento = () => {
           Pagar
         </button>
       </form>
-      <Link to="/inicio" className="pagamento-voltar">
+      <Link to="/charua" className="pagamento-voltar">
         Voltar
       </Link>
     </div>

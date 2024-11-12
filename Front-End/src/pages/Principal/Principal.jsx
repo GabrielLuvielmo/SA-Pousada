@@ -63,7 +63,7 @@
                         <p className='Valor-geral'>R$380</p>
                         <br />
                         <Link to="/suitecomcozinha">
-                            <button className='Valor-domo-botao'>Reservar</button>
+                            <button className='Valor'>Reservar</button>
                         </Link>
                     </div>
                 </div>
@@ -81,7 +81,7 @@
                         <p className='Valor-geral'>R$250</p>
                         <br />
                         <Link to="/chalefamilia">
-                        <button className='Valor-domo-botao'>Reservar</button>
+                        <button className='Valor'>Reservar</button>
                         </Link>
                     </div>
                 </div>
@@ -99,7 +99,7 @@
                         <p className='Valor-geral'>R$590</p>
                         <br />
                         <Link to="/cabana">
-                            <button className='Valor-domo-botao'>Reservar</button>
+                            <button className='Valor'>Reservar</button>
                         </Link>
                     </div>
                 </div>

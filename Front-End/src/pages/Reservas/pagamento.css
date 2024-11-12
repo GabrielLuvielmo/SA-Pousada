@@ -5,11 +5,10 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: #000000a6; /* Fundo preto */
+  background: #222222; /* Fundo preto */
   color: #f5f5f5;
   font-family: Arial, sans-serif;
   padding: 20px;
-  border: none;
 }
 
 .pagamento-titulo {
@@ -17,7 +16,7 @@
   margin-bottom: 1rem;
   text-align: center;
   color: #ff8c00; /* Laranja vibrante */
-  color: #ffffff;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 /* Estilos para mensagens de erro */
@@ -31,12 +30,13 @@
   text-align: center;
   width: 100%;
   max-width: 450px;
-  box-shadow: 0 4px 12px rgba(255, 77, 77, 0.3);
+  box-shadow: 0 4px 12px rgba(234, 22, 22, 0.3);
 }
 
 /* Formulário */
 .pagamento-formulario {
-  background: #333; /* Fundo mais claro para contraste */
+     background-color: #2f2f55f9;
+  ; /* Fundo mais claro para contraste */
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
@@ -57,7 +57,7 @@
 
 .pagamento-campo input {
   padding: 12px;
-  border: 1px solid #ffffff;
+  border: 1px solid #ff8c00;
   border-radius: 8px;
   outline: none;
   font-size: 1rem;
@@ -73,23 +73,27 @@
 
 /* Botão de pagamento */
 .pagamento-botao {
-  background-color: #ff8c00;
-  color: #fff;
-  border: none;
-  padding: 15px;
-  font-size: 1.1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  text-transform: uppercase;
-  transition: background 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 5px 15px rgba(255, 140, 0, 0.4);
+  margin-left: 14vh;
+    width: 25vh;
+    height: 6.5vh;
+    text-align: center;
+    display: flex;              
+    align-items: center;         
+    justify-content: center;     
+    padding: 0;           
+    background: rgb(250, 133, 0);
+    background: radial-gradient(circle, rgb(250, 133, 0) 0%, rgb(255, 179, 15) 100%);
+    color: white;
+    border: none;
+    border-radius: 16px; 
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .pagamento-botao:hover {
-  background-color: #30b91d;
-  transform: translateY(-2px);  
-  box-shadow: 0 5px 15px rgba(8, 192, 17, 0.4);
+  background-color: #ff9c33;
+  transform: translateY(-2px);
 }
 
 /* Botão de voltar */
@@ -102,10 +106,10 @@
   padding: 10px 15px;
   border-radius: 8px;
   transition: background 0.3s ease, color 0.3s ease;
-  background: rgba(255, 140, 0, 0.582);
+  background: rgb(255, 140, 0);
 }
 
 .pagamento-voltar:hover {
-  background-color: rgb(3, 3, 3);
+  background-color: rgba(255, 255, 255, 0.2);
   color: #ffffff;
 }

@@ -9,15 +9,14 @@
   margin: auto;
   display: block;
   width: 210vh;
-
-
 }
 
-.texto{
+.texto-h3 {
     color: white;
     text-align: center;
     position: relative;
-    top: 100%;
+   top: -1vh;
+   left: 65vh;
     font-family: "Roboto", sans-serif;
     font-weight: 300;
     font-style: italic;
@@ -44,15 +43,15 @@
 
   /* CONTAINER PARA O TEXTO */
 
-  .container-texto {
-    background-color: #2f2f55;
+  .texto-h3 {
     padding: 20px; 
-    border: 1px solid #dddddd00;
+    border: 1px solid #ffffff00;
     width: 85%;
-    margin: 0 auto;
+    margin-left: -50vh;
+    margin-top: 5vh;
     transition: all 0.5s ease-in-out;
   }
   
-  .container-texto p {
-    color: #333; 
+  .texto-h3 {
+    color: #ffffff; 
   }
