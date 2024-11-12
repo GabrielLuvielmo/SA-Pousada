@@ -8,7 +8,9 @@
 .ibagem-fundo{
   margin: auto;
   display: block;
-  width: 205vh;
+  width: 210vh;
+
+
 }
 
 .texto{
@@ -36,6 +38,9 @@
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
   }
+  .btn-7:hover {
+    color: black;
+}
 
   /* CONTAINER PARA O TEXTO */
 

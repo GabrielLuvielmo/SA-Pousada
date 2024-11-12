@@ -90,7 +90,7 @@ const Contato = () => {
             {formErrors.email && <span className="erro">{formErrors.email}</span>}
           </div>
 
-          <div className='campo-contato'>
+          <div className='campo-contato '>
             <label className="Contato-Label" htmlFor="message">Mensagem</label>
             <textarea
               name="message"

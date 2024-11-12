@@ -48,7 +48,7 @@
     gap: 2rem;
 }
 .img-acomodacao{
-    margin-top: 5vh;
+    margin-top: 11vh;
     width: auto;
     height: 20vh;
     border-radius: 2vh;
@@ -66,42 +66,110 @@
 .valordiv{
     display: flex;
     flex-direction: column;
-    width:600px;
+    width: 50vh;
     margin-left: 32.5vh;
     margin-top: 10vh;
 }
 
-.Pagamento{
-    text-align: left;
-    font-family: "Noto Sans Anatolian Hieroglyphs", sans-serif;
-    margin-left: 20.5vh;
-    margin-top: 10vh;
+
+/*PARTE DO DOMO e CHARRUA --> deixei as mesmas divs */
+.Pagamento-domo, .Valor-domo{
+
+    font-family: "Roboto", sans-serif;
+    font-size: 2.5vh;
+    margin-left: 5vh;
+    margin-top: -4vh;
+    padding: 4%;
 
 }
-
-.Valor-domo{
-    max-height: fit-content;
-    max-width: fit-content;
-    padding: 0vh;
-    text-align: left;
-    font-family: "Noto Sans Anatolian Hieroglyphs", sans-serif;
-    margin-left: 20.5vh;
-    font-size: 3.8vh;
-    margin-top: 1vh;
-}
-button.Valor{
-    color: rgb(0, 0, 0);
+   .Valor-domo-botao{
+    margin-left: 6vh;
+    margin-top: -4vh;
+     width: 15vh;
+    height: 6.5vh;
+    display: flex;              
+    align-items: center;         
+    justify-content: center;     
     background: rgb(250, 133, 0);
-    background: radial-gradient(circle, rgb(250, 133, 0) 0%);
-    max-width: fit-content;
-    max-height: min-content;
-    margin-left: 20.5vh;
-    margin-top: 0vh;
+    background: radial-gradient(circle, rgb(250, 133, 0) 0%, rgb(255, 179, 15) 100%);
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 16px; 
+    font-size: 2.5vh;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
   
+  .Valor-domo-botao {
+    background-color: #f9ed00; 
+    transform: translateY(-3px); 
+  }
+
+
+ /*Parte das outras acomodações*/
+ .Pagamento, .Valor-geral{
+
+    font-family: "Roboto", sans-serif;
+    font-size: 2.5vh;
+    margin-left: 7vh;
+    margin-top: -4vh;
+    padding: 4%;
+
 }
+   .Valor{
+    margin-left: 8vh;
+    margin-top: -4vh;
+     width: 15vh;
+    height: 6.5vh;
+    display: flex;              
+    align-items: center;         
+    justify-content: center;     
+    background: rgb(250, 133, 0);
+    background: radial-gradient(circle, rgb(250, 133, 0) 0%, rgb(255, 179, 15) 100%);
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 16px; 
+    font-size: 2.5vh;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .Valor {
+    background-color: #f9ed00; 
+    transform: translateY(-3px); 
+  }
+
 
 hr {
     border-top: 2px solid black;
-    margin-top: 100px; /* Ajuste este valor conforme necessário */
-    margin-bottom: 20px; /* Também pode ser ajustado */
+    margin-top: 1vh; /* Ajuste este valor conforme necessário */
+    margin-bottom: -5vh; /* Também pode ser ajustado */
 }
+
+.p-charrua{
+
+margin-top: 4vh;
+    
+}
+
+.p-suite{
+
+margin-top: 4vh;
+margin-left: 8vh;
+        
+}
+
+.p-chale{
+
+margin-top: 4vh;
+margin-left: 8vh;
+            
+}
+
+.p-cabana{
+
+ margin-top: 4vh;
+ margin-left: 8vh;
+                
+}
+

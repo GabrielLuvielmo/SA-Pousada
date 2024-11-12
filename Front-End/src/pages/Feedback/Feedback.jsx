@@ -82,7 +82,7 @@ const Feedback = () => {
             {errosFormulario.comentarios && <span className="mensagem-erro">{errosFormulario.comentarios}</span>}
           </div>
 
-          <button type="submit" className="botao-enviar">Enviar Feedback</button>
+          <button type="submit" className="botao-enviar">Enviar</button>
         </form>
       )}
     </div>

@@ -7,29 +7,29 @@ function Carrossel() {
       <Carousel.Item>
         <img
           className="carrossel-imagem"
-          src="/images/fundo-pousada.png" //Link do diretorio da primeira imagem do carrossel
+          src="/images/chale-familia.jpg" //Link do diretorio da primeira imagem do carrossel
           alt="First slide"
         />
         <Carousel.Caption>
           <h5>Chalé Família</h5>
-          <p>Um chalé acolhedor, perfeito para criar memórias inesquecíveis ao lado de quem você ama..</p>
+          <p>Um chalé acolhedor, perfeito para criar memórias inesquecíveis ao lado de quem você ama.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <img
           className="carrossel-imagem"
-          src="/images/cabana.jpg" //Link do diretorio da segunda imagem do carrossel
+          src="/images/fundo-pousada.png" //Link do diretorio da segunda imagem do carrossel
           alt="Second slide"
         />
         <Carousel.Caption>
-          <h5>Cabana</h5>
-          <p>Cabana rústica e aconchegante, perfeita para relaxar e se reconectar com a natureza.</p>
+          <h5>Suíte com cozinha</h5>
+          <p>Suíte rústica e aconchegante, perfeita para relaxar e se reconectar com a natureza.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <img
           className="carrossel-imagem"
-          src="/images/domo2.jpeg" //Link do diretorio da terceira imagem do carrossel
+          src="/images/domo.png" //Link do diretorio da terceira imagem do carrossel
           alt="Third slide"
         />
         <Carousel.Caption>

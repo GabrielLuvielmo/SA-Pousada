@@ -1,15 +1,28 @@
+.pagina-contato{
+  background-image: url(/images/fundo-pousada.png);
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+
+}
+
 .div-contato {
-  max-width: 600px;
+  width: 80vh;
   margin: 40px auto;
   padding: 30px;
   border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Sombra mais forte */
-  background-color: #2F2F55; /* Fundo branco para o formulário */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); 
+  background-color: #2F2F55; 
+  position: absolute; 
+  margin-left: 65vh;
+  margin-top: 10vh;
 }
 
 .h2-contato {
   text-align: center;
-  color: #ffffff; /* Azul vibrante */
+  color: #ffffff; 
   margin-bottom: 20px;
   font-size: 40px; 
   font-weight: bold;
@@ -17,14 +30,10 @@
 
 .campo-contato {
   margin-bottom: 25px;
+  
+
 }
 
-.Contato-Label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
-  color: #ffffff; /* Azul consistente com o título */
-}
 
 input, textarea {
   width: 100%;
@@ -33,12 +42,22 @@ input, textarea {
   border-radius: 6px; 
   font-size: 16px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  resize: none !important;  /* TIRA A BARRINHA DE SCROLLAR P/ BAIXO*/
+
+
+}
+
+.Contato-Label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #ffffff; 
 }
 
 input:focus, textarea:focus {
-  border-color: #2f66b8; /* Foco azul */
+  border-color: #2f66b8; 
   outline: none;
-  box-shadow: 0 0 8px rgba(47, 102, 184, 0.5); /* Sombra azul no foco */
+  box-shadow: 0 0 8px rgba(47, 102, 184, 0.5); 
 }
 
 span.erro {
@@ -56,20 +75,27 @@ span.erro {
 }
 
 .botao-contato {
-  width: 100%;
-  padding: 15px;
-  background-color: #fa8500; /* Laranja para cor do botão */
+  margin-left: 27vh;
+  width: 15vh;
+  height: 6.5vh;
+  text-align: center;
+  display: flex;              
+  align-items: center;         
+  justify-content: center;     
+  padding: 0;           
+  background: rgb(250, 133, 0);
+  background: radial-gradient(circle, rgb(250, 133, 0) 0%, rgb(255, 179, 15) 100%);
   color: white;
   border: none;
-  border-radius: 6px; 
+  border-radius: 16px; 
   font-size: 18px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .botao-contato:hover {
-  background-color: #d77300; /* Laranja mais escuro ao passar o mouse */
-  transform: translateY(-3px); /* Efeito de elevação */
+  background-color: #f9ed00; 
+  transform: translateY(-3px); 
 }
 
 .botao-contato:disabled {
