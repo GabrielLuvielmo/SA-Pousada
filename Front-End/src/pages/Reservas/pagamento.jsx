@@ -7,18 +7,58 @@ const Pagamento = () => {
   const [nomeTitular, setNomeTitular] = useState('');
   const [dataValidade, setDataValidade] = useState('');
   const [cvv, setCvv] = useState('');
+  const [error, setError] = useState('');
+
+  const handleCardNumberChange = (e) => {
+    const value = e.target.value.replace(/\D/g, '');
+    const formattedValue = value.replace(/(\d{4})(?=\d)/g, '$1 ');
+    setCartaoNumero(formattedValue);
+  };
+
+  const handleDateChange = (e) => {
+    const value = e.target.value.replace(/\D/g, '');
+    const formattedValue = value.replace(/(\d{2})(\d{2})/, '$1/$2');
+    setDataValidade(formattedValue);
+  };
+
+  const validateInputs = () => {
+    if (!nomeTitular || !cartaoNumero || !dataValidade || !cvv) {
+      setError('Todos os campos são obrigatórios.');
+      return false;
+    }
+    if (!/^\d{16}$/.test(cartaoNumero.replace(/\s+/g, ''))) {
+      setError('O número do cartão deve ter 16 dígitos.');
+      return false;
+    }
+    if (!/^\d{2}\/\d{2}$/.test(dataValidade)) {
+      setError('A data de validade deve estar no formato MM/AA.');
+      return false;
+    }
+    if (!/^\d{3,4}$/.test(cvv)) {
+      setError('O CVV deve ter 3 ou 4 dígitos.');
+      return false;
+    }
+    setError('');
+    return true;
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Lógica de pagamento pode ser inserida aqui
-    alert('Pagamento realizado com sucesso!');
+    if (validateInputs()) {
+      alert('Pagamento realizado com sucesso!');
+      setCartaoNumero('');
+      setNomeTitular('');
+      setDataValidade('');
+      setCvv('');
+    }
   };
 
   return (
-    <div className="container-pagamento">
-      <h2><strong>Página de Pagamento</strong></h2>
-      <form onSubmit={handleSubmit} className="form-pagamento">
-        <div className="campo">
+    <div className="pagamento-container">
+      <h2 className="pagamento-titulo"><strong>Página de Pagamento</strong></h2>
+      {error && <div className="pagamento-erro">{error}</div>}
+      <form onSubmit={handleSubmit} className="pagamento-formulario">
+        <div className="pagamento-campo">
           <label htmlFor="nome-titular">Nome do Titular</label>
           <input 
             type="text" 
@@ -28,42 +68,48 @@ const Pagamento = () => {
             required 
           />
         </div>
-        <div className="campo">
+        <div className="pagamento-campo">
           <label htmlFor="cartao-numero">Número do Cartão</label>
           <input 
             type="text" 
             id="cartao-numero" 
             value={cartaoNumero} 
-            onChange={(e) => setCartaoNumero(e.target.value)} 
+            onChange={handleCardNumberChange} 
             required 
+            maxLength="19"
+            placeholder="0000 0000 0000 0000"
           />
         </div>
-        <div className="campo">
+        <div className="pagamento-campo">
           <label htmlFor="data-validade">Data de Validade (MM/AA)</label>
           <input 
             type="text" 
             id="data-validade" 
             value={dataValidade} 
-            onChange={(e) => setDataValidade(e.target.value)} 
+            onChange={handleDateChange} 
             required 
+            maxLength="5"
+            placeholder="MM/AA"
           />
         </div>
-        <div className="campo">
+        <div className="pagamento-campo">
           <label htmlFor="cvv">CVV</label>
           <input 
             type="text" 
             id="cvv" 
             value={cvv} 
-            onChange={(e) => setCvv(e.target.value)} 
+            onChange={(e) => setCvv(e.target.value.replace(/\D/g, ''))} 
             required 
+            maxLength="3"
+            placeholder="000"
           />
         </div>
-        <button type="submit" className="botao-pagar">
+        <button type="submit" className="pagamento-botao">
           Pagar
         </button>
       </form>
-      <Link to="/chalefamilia" className="botao-voltar">
-        Voltar para o Chalé Família
+      <Link to="/inicio" className="pagamento-voltar">
+        Voltar
       </Link>
     </div>
   );

@@ -1,47 +1,112 @@
-.container-pagamento {
-    max-width: 600px;
-    margin: auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  h2 {
-    text-align: center;
-  }
-  
-  .form-pagamento {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .campo {
-    margin-bottom: 15px;
-  }
-  
-  .campo label {
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  .campo input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .botao-pagar, .botao-voltar {
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-    text-align: center;
-  }
-  
-  .botao-pagar:hover, .botao-voltar:hover {
-    background-color: #0056b3;
-  }
-  
+/* Estilos gerais da página */
+.pagamento-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #d8d5d5; /* Fundo preto */
+  color: #f5f5f5;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  border: none;
+}
+
+.pagamento-titulo {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #ff8c00; /* Laranja vibrante */
+
+  color: #000000;
+}
+
+/* Estilos para mensagens de erro */
+.pagamento-erro {
+  color: #ff4d4d;
+  font-size: 1rem;
+  background: rgba(255, 77, 77, 0.1);
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  text-align: center;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 4px 12px rgba(255, 77, 77, 0.3);
+}
+
+/* Formulário */
+.pagamento-formulario {
+  background: #333; /* Fundo mais claro para contraste */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.pagamento-campo label {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #f5f5f5;
+  display: block;
+}
+
+.pagamento-campo input {
+  padding: 12px;
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+  color: #333;
+  background-color: #fff;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.pagamento-campo input:focus {
+
+  transform: scale(1.02);
+}
+
+/* Botão de pagamento */
+.pagamento-botao {
+  background-color: #ff8c00;
+  color: #fff;
+  border: none;
+  padding: 15px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 5px 15px rgba(255, 140, 0, 0.4);
+}
+
+.pagamento-botao:hover {
+  background-color: #30b91d;
+  transform: translateY(-2px);  
+  box-shadow: 0 5px 15px rgba(8, 192, 17, 0.4);
+}
+
+/* Botão de voltar */
+.pagamento-voltar {
+  margin-top: 1.5rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: background 0.3s ease, color 0.3s ease;
+  background: rgba(255, 140, 0, 0.582);
+}
+
+.pagamento-voltar:hover {
+  background-color: rgb(3, 3, 3);
+  color: #ffffff;
+}

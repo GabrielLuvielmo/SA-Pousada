@@ -1,23 +1,143 @@
-.botao-reserva{
-
-    margin-top: 0.5vh;
-    color: black;
-    background-color: rgb(250, 133, 0);
-    font-size: 2vh;
-}
-
-.texto-aco-outro{
-    margin-top: 17vh;
-}
-
-.reservar{
-    margin-top: 44vh;
-    margin-left: -26.5vh;
-    text-align: right;
-}
-
-.img-acomodacao-outro{
-    margin-top: 20vh;
-    height: 20vw;
-    border-radius: 2vh;
-}
+/* Reset de margens e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Definindo a fonte e fundo global */
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9; /* Um fundo suave para não competir com o conteúdo */
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Container principal para alinhamento e espaçamento */
+  .container-principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  /* Estilo para a imagem de acomodação */
+  .image-container {
+    width: 100%;
+    max-width: 900px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 3rem;
+  }
+  
+  .img-acomodacao {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  /* Container para os detalhes da acomodação */
+  .details-container {
+    text-align: center;
+    margin-bottom: 4rem;
+    max-width: 900px;
+    width: 100%;
+  }
+  
+  /* Título da acomodação */
+  .title-domo {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #1d1d1d;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Descrição da acomodação */
+  .description {
+    font-size: 1.3rem;
+    color: #666;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Lista de características da acomodação */
+  .features-list {
+    list-style: none;
+    font-size: 1.1rem;
+    color: #555;
+    text-align: left;
+    margin-top: 2rem;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+  }
+  
+  .features-list li {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Estilo para a área de reserva */
+  .reservation-container {
+    background-color: #2f2f55; /* Cor de fundo escura e sofisticada */
+    color: #fff;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    width: 100%;
+    max-width: 900px;
+    margin-top: 4rem;
+  }
+  
+  /* Título da área de reserva */
+  .reservation-title {
+    font-size: 2.4rem;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Preço da diária */
+  .price {
+    font-size: 1.8rem;
+    color: #ffbb00;
+    margin-bottom: 2rem;
+  }
+  
+  /* Botão de reserva */
+  .reserve-button {
+    background: linear-gradient(145deg, #ff6a00, #e07b00);
+    color: white;
+    padding: 16px 35px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+  }
+  
+  .reserve-button:hover {
+    background: linear-gradient(145deg, #ff7e3f, #f29c35);
+    transform: translateY(-5px);
+  }
+  
+  .reserve-button:active {
+    background: linear-gradient(145deg, #e07b00, #c97b00);
+    transform: translateY(2px);
+  }
+  
+  .reserve-button:focus {
+    outline: none;
+  }
+  
+  /* Efeitos adicionais de sombra e foco para o botão */
+  .reserve-button:focus-visible {
+    box-shadow: 0 0 0 3px rgba(255, 106, 0, 0.5);
+  }
+  

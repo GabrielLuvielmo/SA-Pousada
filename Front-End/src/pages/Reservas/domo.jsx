@@ -1,22 +1,25 @@
 import React from 'react';
-import './Reservas.css'; 
+import './Reservas.css';
 import { Link } from 'react-router-dom';
 
 const Domo = () => {
   return (
     <div className="container-principal">
-      <img 
-        className='img-acomodacao-outro' 
-        src="../../../images/domo.jpeg" 
-        alt="Domo" 
-      />
-      <div className='texto-aco-outro'>
-        <h2><strong>Domo</strong></h2>
-        <p>
+      <div className="image-container">
+        <img 
+          className="img-acomodacao" 
+          src="../../../images/domo.jpeg" 
+          alt="Domo" 
+        />
+      </div>
+
+      <div className="details-container">
+        <h2 className="title-domo">Domo</h2>
+        <p className="description">
           Obs: Os valores exibidos no site estão sujeitos a constantes atualizações.
           Nos feriados e datas comemorativas, o valor da diária também é diferenciado.
         </p>
-        <ul>
+        <ul className="features-list">
           <li>Camas: 1 Casal</li>
           <li>Capacidade: 3 pessoas</li>
           <li>Banheiro privativo</li>
@@ -27,16 +30,15 @@ const Domo = () => {
           <li>Toalhas</li>
           <li>TV Inclusa</li>
         </ul>
-        <hr />
       </div>
 
       {/* Seção de Reserva */}
-      <div className="reservar">
-        <h3>Reservar o Domo</h3>
-        <p>Preço da diária: R$ 500,00</p>
-        <button className="botao-reserva">
-          Reservar Agora
-        </button>
+      <div className="reservation-container">
+        <h3 className="reservation-title">Reservar o Domo</h3>
+        <p className="price">Preço da diária: <strong>R$ 500,00</strong></p>
+        <Link to="/pagamento">
+          <button className="reserve-button">Reservar Agora</button>
+        </Link>
       </div>
     </div>
   );
