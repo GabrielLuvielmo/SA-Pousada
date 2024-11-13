@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const SuiteComCozinha = () => {
   return (
-    <div className="container-principal">
+    <div className="container-suite">
       <img 
         className='img-acomodacao-outro' 
         src="../../../images/domo.jpeg" //alterar dps
@@ -24,13 +24,13 @@ const SuiteComCozinha = () => {
           <li>Wi-Fi gratuito</li>
           <li>Tv Inclusa</li>
         </ul>
-        <hr />
+  
       </div>
 
       {/* Seção de Reserva */}
       <div className="reservar">
         <h3>Reservar o Domo</h3>
-        <p>Preço da diária: R$ 500,00</p>
+        <p>Preço da diária: R$ 390,00</p>
         <button className="botao-reserva">
           Reservar Agora
         </button>

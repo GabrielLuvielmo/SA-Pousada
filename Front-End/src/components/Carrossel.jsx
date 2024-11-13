@@ -18,7 +18,7 @@ function Carrossel() {
       <Carousel.Item>
         <img
           className="carrossel-imagem"
-          src="/images/fundo-pousada.png" //Link do diretorio da segunda imagem do carrossel
+          src="/images/suitecozinha-carrossel.jpg" //Link do diretorio da segunda imagem do carrossel
           alt="Second slide"
         />
         <Carousel.Caption>

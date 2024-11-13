@@ -108,7 +108,7 @@ const Pagamento = () => {
           Pagar
         </button>
       </form>
-      <Link to="/charua" className="pagamento-voltar">
+      <Link to="/inicio" className="pagamento-voltar">
         Voltar
       </Link>
     </div>

@@ -1,175 +1,199 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Anatolian+Hieroglyphs&display=swap');
-
-.main-inicio{
-    background-color: #000000;
-    margin: auto;
+/* .main-inicio */
+.main-inicio {
+    padding: 20px;
 }
 
-.texto{
-    color: white;
-    text-align: center;
-    position: relative;
-    top: 100%;
-    font-family: "Roboto", sans-serif;
-    font-weight: 300;
-    font-style: italic;
+/* .filter-section - Filtros */
+.filter-section {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+    padding: 15px 25px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    align-items: center;
+    transition: box-shadow 0.3s ease-in-out;
 }
 
-.imagem-fundo{
-    margin: auto;
-    display: block;
-    width: 200vh;
+.filter-section:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.btn-8 {
-    background: rgb(250, 133, 0);
-    background: radial-gradient(circle, rgb(250, 133, 0) 0%, rgb(255, 179, 15) 100%);
-    border-radius: 16px;
-    line-height: 42px;
-    color: white;
-    font-size: 25px;
-    transition: color 0.3s ease;
-    text-align: center;
-    width: 10%;
-    display: block;
-    margin: 0 auto;
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
-  }
+.filter-section label {
+    font-size: 16px;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 500;
+    transition: color 0.3s;
+}
 
-  /* CONTAINER PARA A PARTE DE BAIXO */
+.filter-section label:hover {
+    color: #e67e22;
+}
 
-.container-principal{
-    background-color: whitesmoke;
-    padding: 2.5%;
-    margin-bottom: 1%;
+.filter-section input,
+.filter-section select {
+    margin-top: 8px;
+    padding: 10px 15px;
+    width: 180px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.filter-section input:focus,
+.filter-section select:focus {
+    border-color: #e67e22;
+    box-shadow: 0 0 5px rgba(230, 126, 34, 0.5);
+    outline: none;
+}
+
+/* .container-principal */
+.container-principal {
     display: flex;
     flex-direction: row;
-    gap: 2rem;
-}
-.img-acomodacao{
-    margin-top: 11vh;
-    width: auto;
-    height: 20vh;
-    border-radius: 2vh;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.texto-aco{
-    min-height: 100px;
-    width: 50%;
-    font-family: "Noto Sans Anatolian Hieroglyphs", sans-serif;
-    padding-bottom: 7vh; /* Espaço entre o texto e a linha */
+.img-acomodacao {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.texto-aco {
+    flex: 1;
+}
+
+/* Valor e botão */
+.valordiv {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    margin-left: 20px;
 }
 
-.valordiv{
-    display: flex;
-    flex-direction: column;
-    width: 50vh;
-    margin-left: 32.5vh;
-    margin-top: 10vh;
+.Pagamento,
+.Valor-geral {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
 }
 
-
-/*PARTE DO DOMO e CHARRUA --> deixei as mesmas divs */
-.Pagamento-domo, .Valor-domo{
-
-    font-family: "Roboto", sans-serif;
-    font-size: 2.5vh;
-    margin-left: 5vh;
-    margin-top: -4vh;
-    padding: 4%;
-
+.Valor-geral {
+    color: #e67e22;
 }
-   .Valor-domo-botao{
-    margin-left: 6vh;
-    margin-top: -4vh;
-     width: 15vh;
-    height: 6.5vh;
-    display: flex;              
-    align-items: center;         
-    justify-content: center;     
-    background: rgb(250, 133, 0);
-    background: radial-gradient(circle, rgb(250, 133, 0) 0%, rgb(255, 179, 15) 100%);
-    color: rgb(0, 0, 0);
+
+.Valor {
+    padding: 10px 20px;
+    background-color: #e67e22;
+    color: #fff;
     border: none;
-    border-radius: 16px; 
-    font-size: 2.5vh;
+    border-radius: 4px;
+    font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  .Valor-domo-botao {
-    background-color: #f9ed00; 
-    transform: translateY(-3px); 
-  }
-
-
- /*Parte das outras acomodações*/
- .Pagamento, .Valor-geral{
-
-    font-family: "Roboto", sans-serif;
-    font-size: 2.5vh;
-    margin-left: 7vh;
-    margin-top: -4vh;
-    padding: 4%;
-
-}
-   .Valor{
-    margin-left: 8vh;
-    margin-top: -4vh;
-     width: 15vh;
-    height: 6.5vh;
-    display: flex;              
-    align-items: center;         
-    justify-content: center;     
-    background: rgb(250, 133, 0);
-    background: radial-gradient(circle, rgb(250, 133, 0) 0%, rgb(255, 179, 15) 100%);
-    color: rgb(0, 0, 0);
-    border: none;
-    border-radius: 16px; 
-    font-size: 2.5vh;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  .Valor {
-    background-color: #f9ed00; 
-    transform: translateY(-3px); 
-  }
-
-
-hr {
-    border-top: 2px solid black;
-    margin-top: 1vh; /* Ajuste este valor conforme necessário */
-    margin-bottom: -5vh; /* Também pode ser ajustado */
+    transition: background-color 0.3s;
 }
 
-.p-charrua{
-
-margin-top: 4vh;
-    
+.Valor:hover {
+    background-color: #d35400;
 }
 
-.p-suite{
+/* Responsividade para telas médias (tablets) */
+@media (max-width: 992px) {
+    .filter-section {
+        flex-direction: column;
+        padding: 10px 15px;
+        gap: 15px;
+    }
 
-margin-top: 4vh;
-margin-left: 8vh;
-        
+    .filter-section input,
+    .filter-section select {
+        width: 100%; /* Campos de filtro ocupando 100% da largura */
+    }
+
+    .container-principal {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .img-acomodacao {
+        width: 150px;
+        margin-bottom: 15px; /* Deixa a imagem com mais espaço em telas pequenas */
+    }
+
+    .texto-aco,
+    .valordiv {
+        text-align: center;
+    }
 }
 
-.p-chale{
+/* Responsividade para telas pequenas (celulares) */
+@media (max-width: 768px) {
+    .main-inicio {
+        padding: 10px; /* Reduzir o padding para celulares */
+    }
 
-margin-top: 4vh;
-margin-left: 8vh;
-            
+    .filter-section {
+        padding: 10px 12px;
+        gap: 10px;
+    }
+
+    .filter-section input,
+    .filter-section select {
+        width: 100%; /* Filtros ajustados para 100% da largura */
+        font-size: 12px; /* Fontes menores */
+    }
+
+    .container-principal {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .img-acomodacao {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .texto-aco,
+    .valordiv {
+        text-align: center;
+    }
+
+    /* Ajuste no tamanho do botão de valor */
+    .Valor {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
 }
 
-.p-cabana{
+/* Para telas muito pequenas (smartphones em modo retrato) */
+@media (max-width: 480px) {
+    .filter-section {
+        padding: 10px 8px;
+        gap: 8px;
+    }
 
- margin-top: 4vh;
- margin-left: 8vh;
-                
+    .filter-section input,
+    .filter-section select {
+        width: 100%;
+        font-size: 10px;
+    }
+
+    .Valor {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
 }
-

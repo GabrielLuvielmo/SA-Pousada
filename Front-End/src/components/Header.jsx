@@ -6,21 +6,20 @@ import './Header.css';
 
 function Header() {
   return (
-    <>
-    {/* REPENSAR O MECANISMO DA NAVBAR */}
-      <Navbar bg="dark" data-bs-theme="dark" className='body-header'>
-        <Container>
-          <Navbar.Brand href="/">Quinta do Ypuã</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="/inicio">Página Inicial</Nav.Link>
-            <Nav.Link href="/contato">Contato</Nav.Link>
-            <Nav.Link href="/cadastro">Entrar</Nav.Link>
-            <Nav.Link href="/feedback">Feedback</Nav.Link>
-            
+    <Navbar bg="dark" expand="lg" variant="dark" className="body-header">
+      <Container>
+        <Navbar.Brand href="/" className="navbar-logo">Quinta do Ypuã</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ms-auto">
+            <Nav.Link href="/inicio" className="nav-link">Página Inicial</Nav.Link>
+            <Nav.Link href="/contato" className="nav-link">Contato</Nav.Link>
+            <Nav.Link href="/feedback" className="nav-link">Feedback</Nav.Link>
+            <Nav.Link href="/cadastro" className="nav-link btn-login3">Entrar</Nav.Link>
           </Nav>
-        </Container>
-      </Navbar>
-    </>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
 

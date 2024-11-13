@@ -5,7 +5,7 @@ import Carrossel from '../../components/Carrossel.jsx';
 
 const Domo = () => {
   return (
-    <div className="container-principal">
+    <div className="container-domo">
       <img 
         className='img-acomodacao-domo' 
         src="../../../images/domo.jpeg" 
@@ -28,16 +28,16 @@ const Domo = () => {
           <li>Toalhas</li>
           <li>TV Inclusa</li>
         </ul>
-     
+
       </div>
 
       {/* Seção de Reserva */}
       <div className="reservar">
         <h3>Reservar o Domo</h3>
-        <p>Preço da diária: R$ 500,00</p>
-        <button className="botao-reserva">
-          Reservar Agora
-        </button>
+        <p>Preço da diária: R$ 590,00</p>
+        <Link to="/pagamento" className="botao-reserva">
+        Reservar Agora
+      </Link>
       </div>
     </div>
   );

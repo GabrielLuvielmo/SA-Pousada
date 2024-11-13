@@ -42,7 +42,7 @@ export class DatabasePostgres {
     return reservas;
   }
 
-  async createReserva(Reserva) {
+  async createReserva(Reserva, idUsuario) {
     const idReserva = randomUUID();
     console.log('id', id);
     const dataInicio = Reserva.datai;
@@ -50,7 +50,7 @@ export class DatabasePostgres {
     const quartoReserva = Reserva.quarto;
     
     await sql`insert into Reserva (idReserva, dataInicio, dataFim, quartoReserva)
-    values (${idReserva}, ${dataInicio}, ${dataFim}, ${quartoReserva})`
+    values (${idReserva}, ${dataInicio}, ${dataFim}, ${quartoReserva}, ${idUsuario})`
   }
 
   async updateReserva(idReserva, Reserva) {

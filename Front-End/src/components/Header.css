@@ -3,37 +3,164 @@
 .body-header {
     background-color: rgb(32, 0, 61);
     color: #fff;
-    padding: 0rem 0rem;
+    padding: 0.5rem 1rem; /* Padding fixo para a área do cabeçalho */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
 }
 
+/* Logo da Navbar */
 .navbar-brand {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: bold;
     color: #fff;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
 }
 
+.navbar-brand:hover {
+    color: #FFD700;
+}
+
+/* Links da Navbar */
 .nav-link {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #fff;
     margin-right: 15px;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .nav-link:hover {
     color: #FFD700;
+    transform: scale(1.05);
 }
 
+/* Link ativo - destaque */
 .nav-link.active {
     font-weight: bold;
     text-decoration: underline;
 }
 
-@media (max-width: 768px) {
+/* Estilos para o botão de login */
+.nav-link.btn-login {
+    font-weight: bold;
+    background-color: #FFD700;
+    color: #000;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link.btn-login:hover {
+    background-color: #e67e22;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* Responsividade para telas grandes (Desktop) */
+@media (max-width: 1200px) {
     .navbar-brand {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
 
     .nav-link {
+        font-size: 1.1rem;
+    }
+}
+
+/* Responsividade para tablets (telas médias) */
+@media (max-width: 992px) {
+    .navbar-brand {
+        font-size: 1.6rem; /* Reduzindo a logo */
+    }
+
+    .nav-link {
+        font-size: 1rem;
+    }
+
+    .body-header {
+        padding: 0.8rem 1.5rem; /* Ajuste de padding */
+    }
+}
+
+/* Responsividade para telas pequenas (celulares) */
+@media (max-width: 768px) {
+    .body-header {
+        padding: 0.5rem 1rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.4rem;
+    }
+
+    .nav-link {
+        font-size: 0.95rem;
+        margin-right: 10px;
+        padding: 0.5rem 1rem;
+    }
+
+    /* Ajuste do menu para mobile */
+    .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar-collapse {
+        justify-content: center;
+    }
+
+    .nav-link.active {
+        font-weight: normal;
+        text-decoration: none;
+    }
+
+    /* Ajuste do botão "Entrar" para responsividade */
+    .nav-link.btn-login {
+        width: 100%;
+        margin-top: 1rem;
+        padding: 10px;
+    }
+}
+
+/* Para telas muito pequenas (celulares em modo retrato) */
+@media (max-width: 480px) {
+    .body-header {
+        padding: 0.5rem 0.5rem;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.3rem; /* Logo ainda menor */
+    }
+
+    /* Ajustes no layout de filtros para telas pequenas */
+    .filter-container {
+        padding: 10px;
+    }
+
+    .filter-title {
+        font-size: 1.3rem;
+    }
+
+    .filter-form {
+        gap: 10px;
+    }
+
+    .filter-group label {
+        font-size: 0.9rem;
+    }
+
+    .filter-group input,
+    .filter-group select {
+        font-size: 0.9rem;
+    }
+
+    .filter-button {
         font-size: 1rem;
     }
 }

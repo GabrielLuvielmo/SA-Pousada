@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 
 const Charua = () => {
   return (
-    <div className="container-principal">
+    <div className="container-charrua">
       <img 
-        className='img-acomodacao-outro' 
-        src="../../../images/domo.jpeg" //alterar dps
+        className='img-acomodacao-charrua' 
+        src="../../../images/charuabus.jpeg" //alterar dps
         alt="Domo" 
       />
       <div className='texto-aco-outro'>
-        <h2><strong>Charrua</strong></h2>
+      <h2 className='h2-charrua'><strong >Charrua</strong></h2>
         <p>
           Obs: Os valores exibidos no site estão sujeitos a constantes atualizações.
           Nos feriados e datas comemorativas, o valor da diária também é diferenciado.
@@ -29,13 +29,13 @@ const Charua = () => {
           <li>Banheira</li>
           <li>Toalhas</li>
         </ul>
-        <hr />
+        
       </div>
 
       {/* Seção de Reserva */}
       <div className="reservar">
       <h3>Reservar Charrua</h3>
-      <p>Preço da diária: R$ 500,00</p>
+      <p>Preço da diária: R$ 490,00</p>
       <Link to="/pagamento" className="botao-reserva">
         Reservar Agora
       </Link>

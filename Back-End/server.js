@@ -90,7 +90,7 @@ server.post('/Reserva', async (request, reply) => {
     }
 
     if (body.datai && body.dataf && body.quarto){
-        await databasePostgres.createReserva(body);
+        await databasePostgres.createReserva(body, body.idUsuario);
         return reply.status(201).send('Reserva Realizada com Sucesso');
     } else {
         return reply.status(400).send(error);

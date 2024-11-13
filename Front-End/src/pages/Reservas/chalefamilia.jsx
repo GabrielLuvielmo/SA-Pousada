@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const ChaleFamilia = () => {
   return (
-    <div className="container-principal">
+    <div className="container-chale">
       <img 
         className='img-acomodacao-outro' 
         src="../../../images/chalefamilia.jpg" 

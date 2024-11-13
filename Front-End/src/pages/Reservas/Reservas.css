@@ -1,46 +1,157 @@
+/* Estilos gerais */
+.container-principal, body {
+    background-color: rgb(249, 239, 226);
+    margin: 0;
+    padding: 0;
+}
 
-.botao-reserva{
+/* .botao-reserva */
+.botao-reserva {
     margin-top: 0.5vh;
     color: black;
     background-color: rgb(250, 133, 0);
     font-size: 2vh;
-    margin-left: -30vh;
+    padding: 10px 20px;
+    background-color: #e67e22;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.5s;
 }
 
-.texto-aco-domo{
-    margin-top: 17vh;
-    width: 135vh;
+.botao-reserva:hover {
+    color: black;
+    background-color: #ffd900;
 }
 
-
-
-.reservar{
-    position: absolute;
-    margin-top: 70vh;
-    margin-left: 125vh;
-    text-align: right;
+/* .texto-aco-domo */
+.texto-aco-domo {
+    margin-top: 5vh;
+    width: 80%; /* Diminuído para que não ocupe toda a largura */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
-.img-acomodacao-domo{
+/* .reservar */
+.reservar {
+    position: relative;
     margin-top: 20vh;
-    height: 30vh;
-    border-radius: 2vh;
-    width: 40vh;
+    text-align: center;
 }
 
-.h2-domo{
-margin-top:-25vh;
-margin-left: 40vh;
-padding: 10vh;
-color: #000000;
+/* .img-acomodacao-domo */
+.img-acomodacao-domo {
+    max-width: 100%; /* Garantir que a imagem não ultrapasse a largura da tela */
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
 }
 
+/* .h2-domo */
+.h2-domo {
+    font-size: 2rem;
+    color: #000000;
+    text-align: center;
+    margin-top: 20px;
+}
 
-h3{
-   margin-top: -15vh;
-   margin-left: 22vh;
+/* Containers flexíveis para acomodação */
+.container-domo, .container-charrua, .container-suite {
+    margin-top: 5vh;
+    display: flex;
+    justify-content: center; /* Centraliza os itens */
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(249, 239, 226);
+    border: none;
+    flex-wrap: wrap; /* Para garantir que os itens se ajustem nas telas menores */
 }
-.container-principal, body{
-    background-color:rgb(249, 239, 226)
+
+.container-domo .img-acomodacao-domo,
+.container-charrua .img-acomodacao-charrua,
+.container-suite .img-acomodacao-suite {
+    width: 100%; /* As imagens agora se ajustam melhor */
+    max-width: 300px; /* Limita o tamanho máximo para evitar imagens grandes demais */
+    margin-bottom: 15px;
 }
-  
+
+/* Texto */
+.container-domo .h2-domo,
+.container-charrua .h2-charrua,
+.container-suite .h2-suite {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    .container-domo, .container-charrua, .container-suite {
+        flex-direction: column;
+    }
+
+    .botao-reserva {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .img-acomodacao-domo {
+        width: 80%; /* Ajuste para telas menores */
+        max-width: 100%;
+        margin-top: 10px;
+    }
+
+    .texto-aco-domo {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Para dispositivos móveis */
+    .texto-aco-domo {
+        width: 90%;
+        margin-left: 5vw;
+        text-align: left;
+    }
+
+    .img-acomodacao-domo {
+        width: 100%;
+        height: auto;
+    }
+
+    .h2-domo {
+        font-size: 1.2rem;
+        margin-top: 20px;
+    }
+
+    .container-domo, .container-charrua, .container-suite {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .botao-reserva {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .img-acomodacao-domo {
+        width: 100%;
+        height: auto;
+    }
+
+    .h2-domo {
+        font-size: 1.1rem;
+    }
+
+    .container-domo, .container-charrua, .container-suite {
+        padding: 8px;
+        margin-top: 5vh;
+    }
+}
