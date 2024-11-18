@@ -27,23 +27,29 @@
 }
 
 /* .texto-aco-domo */
-.texto-aco-domo {
+.texto-aco-domo, .texto-aco-outro {
     margin-top: 5vh;
     width: 80%; /* Diminuído para que não ocupe toda a largura */
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0vh;
     text-align: center;
 }
 
+.pontos-domo, .pontos-suite{
+margin-right: 132vh;
+text-align: left;
+
+
+}
+
 /* .reservar */
-.reservar {
+.reservar, .reservar-suite{
     position: relative;
     margin-top: 20vh;
     text-align: center;
 }
 
 /* .img-acomodacao-domo */
-.img-acomodacao-domo {
+.img-acomodacao-domo, .img-acomodacao-outro {
     max-width: 100%; /* Garantir que a imagem não ultrapasse a largura da tela */
     height: auto;
     border-radius: 10px;
@@ -51,7 +57,7 @@
 }
 
 /* .h2-domo */
-.h2-domo {
+.h2-domo, .h2-charrua {
     font-size: 2rem;
     color: #000000;
     text-align: center;

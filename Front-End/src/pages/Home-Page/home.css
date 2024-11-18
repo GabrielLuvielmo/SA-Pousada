@@ -1,57 +1,135 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-.main-home{
+/* Estilo global */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Garantir altura total */
+    background-color: #2f2f55; /* Azul para toda a página */
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box; /* Inclui padding e border no cálculo do tamanho */
+}
+
+/* Estilo principal da página */
+.main-home {
     background-color: #2f2f55;
-    margin: auto;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Garante que a página ocupe a altura total da tela */
+    box-sizing: border-box;
 }
 
-.ibagem-fundo{
-  margin: auto;
-  display: block;
-  width: 210vh;
+/* Imagem de fundo - Aumentando a largura de forma simétrica */
+.ibagem-fundo {
+    width: 120%; /* A imagem ocupará 120% da largura da tela */
+    max-width: 120%; /* Garante que a imagem não ultrapasse os limites */
+    height: auto;
+    display: block;
+    margin-left: -10%; /* Desloca a imagem para a esquerda */
+    margin-right: -10%; /* Desloca a imagem para a direita */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra suave */
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
 }
 
+/* Texto principal */
 .texto-h3 {
     color: white;
     text-align: center;
-    position: relative;
-   top: -1vh;
-   left: 65vh;
-    font-family: "Roboto", sans-serif;
     font-weight: 300;
     font-style: italic;
+    padding: 20px;
+    margin: 20px auto;
+    width: 100%; /* Aumenta a largura do texto para toda a largura disponível */
+    font-size: 1.5rem; /* Tamanho adequado para leitura */
+    max-width: 1200px; /* Aumenta o limite de largura do texto */
+    line-height: 1.6; /* Melhora a legibilidade */
+    transition: all 0.5s ease-in-out;
+    letter-spacing: 1px; /* Espaçamento entre as letras */
 }
 
+/* Botão estilizado */
 .btn-7 {
-    background: rgb(250, 133, 0);
     background: radial-gradient(circle, rgb(250, 133, 0) 0%, rgb(255, 179, 15) 100%);
     border-radius: 16px;
     line-height: 42px;
     color: white;
-    font-size: 25px;
-    transition: color 0.3s ease;
+    font-size: 20px;
+    transition: all 0.3s ease;
     text-align: center;
-    width: 10%;
-    display: block;
-    margin: 0 auto;
-    font-family: 'Roboto', sans-serif;
+    width: 240px; /* Botão mais largo */
+    margin: 20px auto;
+    padding: 12px;
     font-weight: bold;
-  }
-  .btn-7:hover {
-    color: black;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    margin-top: auto;
 }
 
-  /* CONTAINER PARA O TEXTO */
+.btn-7:hover {
+    background: radial-gradient(circle, rgb(255, 179, 15) 0%, rgb(250, 133, 0) 100%);
+    color: black;
+    transform: translateY(-3px); /* Efeito de elevação no hover */
+}
 
-  .texto-h3 {
-    padding: 20px; 
-    border: 1px solid #ffffff00;
-    width: 85%;
-    margin-left: -50vh;
-    margin-top: 5vh;
-    transition: all 0.5s ease-in-out;
-  }
-  
-  .texto-h3 {
-    color: #ffffff; 
-  }
+/* Responsividade */
+
+/* Tablets */
+@media (max-width: 992px) {
+    .texto-h3 {
+        font-size: 1.3rem;
+        width: 90%; /* Diminui a largura para dispositivos menores */
+        padding: 15px;
+    }
+
+    .btn-7 {
+        font-size: 18px;
+        width: 200px;
+    }
+
+    .ibagem-fundo {
+        width: 110%; /* Ajusta a imagem para ficar maior em tablets */
+        margin-left: -5%; /* Desloca a imagem para a esquerda em tablets */
+        margin-right: -5%; /* Desloca a imagem para a direita em tablets */
+    }
+}
+
+/* Telas pequenas (celulares) */
+@media (max-width: 768px) {
+    .texto-h3 {
+        font-size: 1.1rem;
+        width: 95%; /* Aumenta a largura do texto em telas menores */
+        padding: 15px;
+    }
+
+    .ibagem-fundo {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0; /* Imagem vai ocupar 100% da largura */
+    }
+
+    .btn-7 {
+        font-size: 16px;
+        width: 180px;
+        line-height: 36px;
+    }
+}
+
+/* Telas muito pequenas */
+@media (max-width: 480px) {
+    .texto-h3 {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .btn-7 {
+        font-size: 14px;
+        width: 150px;
+    }
+}

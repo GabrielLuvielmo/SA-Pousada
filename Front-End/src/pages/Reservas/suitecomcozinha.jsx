@@ -1,39 +1,38 @@
 import React from 'react';
-import './Reservas.css'; // Supondo que você tenha um arquivo CSS para estilização
-import { Link } from 'react-router-dom';
+import './Reservas.css'; // Arquivo de estilo CSS
+import { Link } from 'react-router-dom'; // Caso precise de navegação
 
 const SuiteComCozinha = () => {
   return (
-    <div className="container-suite">
+    <div className="container-domo"> {/* Alterado para seguir o padrão de classe */}
       <img 
-        className='img-acomodacao-outro' 
-        src="../../../images/domo.jpeg" //alterar dps
-        alt="Domo" 
+        className="img-acomodacao-domo" 
+        src="../../../images/suitecozinha.jpg" //alterar dps
+        alt="Suíte com Cozinha" 
       />
-      <div className='texto-aco-outro'>
-        <h2><strong>Suíte Com Cozinha</strong></h2>
+      <div className="texto-aco-domo"> {/* Classe unificada */}
+        <h2 className="h2-domo"><strong>Suíte Com Cozinha</strong></h2>
         <p>
           Obs: Os valores exibidos no site estão sujeitos a constantes atualizações.
-         <br /> Nos feriados e datas comemorativas, o valor da diária também é diferenciado.
+          <br /> Nos feriados e datas comemorativas, o valor da diária também é diferenciado.
         </p>
-        <ul>
+        <ul className="pontos-domo"> {/* Mesma classe do Domo */}
           <li>Camas: 1 Casal e 1 Solteiro</li>
           <li>Capacidade: 3 pessoas</li>
           <li>Banheiro privativo</li>
           <li>Ar-condicionado</li>
           <li>Wi-Fi gratuito</li>
-          <li>Tv Inclusa</li>
+          <li>TV Inclusa</li>
         </ul>
-  
       </div>
 
       {/* Seção de Reserva */}
-      <div className="reservar">
-        <h3>Reservar o Domo</h3>
+      <div className="reservar"> {/* Mesma classe usada no Domo */}
+        <h3>Reservar Suíte</h3>
         <p>Preço da diária: R$ 390,00</p>
-        <button className="botao-reserva">
+        <Link to="/pagamento" className="botao-reserva">
           Reservar Agora
-        </button>
+        </Link>
       </div>
     </div>
   );

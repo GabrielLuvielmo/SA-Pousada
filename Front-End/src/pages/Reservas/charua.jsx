@@ -4,19 +4,19 @@ import { Link } from 'react-router-dom';
 
 const Charua = () => {
   return (
-    <div className="container-charrua">
+    <div className="container-domo">
       <img 
-        className='img-acomodacao-charrua' 
+        className='img-acomodacao-domo' 
         src="../../../images/charuabus.jpeg" //alterar dps
         alt="Domo" 
       />
-      <div className='texto-aco-outro'>
-      <h2 className='h2-charrua'><strong >Charrua</strong></h2>
+      <div className='texto-aco-domo'>
+      <h2 className='h2-domo'><strong >Charrua</strong></h2>
         <p>
           Obs: Os valores exibidos no site estão sujeitos a constantes atualizações.
           Nos feriados e datas comemorativas, o valor da diária também é diferenciado.
         </p>
-        <ul>
+        <ul className="pontos-domo">
           <li>Camas: 1 Casal</li>
           <li>Capacidade: 2 pessoas</li>
           <li>Banheiro privativo</li>

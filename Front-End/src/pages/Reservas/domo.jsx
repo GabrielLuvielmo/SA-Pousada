@@ -17,7 +17,7 @@ const Domo = () => {
           Obs: Os valores exibidos no site estão sujeitos a constantes atualizações.
           Nos feriados e datas comemorativas, o valor da diária também é diferenciado.
         </p>
-        <ul>
+        <ul className=' pontos-domo'>
           <li>Camas: 1 Casal</li>
           <li>Capacidade: 3 pessoas</li>
           <li>Banheiro privativo</li>

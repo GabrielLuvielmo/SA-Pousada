@@ -8,7 +8,14 @@ function Header() {
   return (
     <Navbar bg="dark" expand="lg" variant="dark" className="body-header">
       <Container>
-        <Navbar.Brand href="/" className="navbar-logo">Quinta do Ypuã</Navbar.Brand>
+      <Navbar.Brand href="/" className="navbar-logo">
+  <img 
+    src="/images/POUSADA-LOGO.png" 
+    alt="Logo da Quinta do Ypuã" 
+    className= "logo-img" 
+  />
+  Quinta do Ypuã
+</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">

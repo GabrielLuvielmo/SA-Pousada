@@ -1,27 +1,36 @@
-/* Header.css */
+/* Melhorando a responsividade */
 
+/* Estilos gerais do body-header */
 .body-header {
     background-color: rgb(32, 0, 61);
     color: #fff;
-    padding: 0.5rem 1rem; /* Padding fixo para a área do cabeçalho */
+    padding: 0.5rem 1rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease;
 }
 
-/* Logo da Navbar */
+/* Estilos do logo e texto */
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap; /* Impede que o texto quebre */
+}
+
+.logo-img {
+    width: 60px;
+    margin-right: 10px;
+}
+
 .navbar-brand {
     font-size: 1.8rem;
     font-weight: bold;
     color: #fff;
     padding: 0.5rem 0;
+    white-space: nowrap; /* Evita quebras */
     transition: color 0.3s ease;
 }
 
-.navbar-brand:hover {
-    color: #FFD700;
-}
-
-/* Links da Navbar */
+/* Links da navbar */
 .nav-link {
     font-size: 1.1rem;
     color: #fff;
@@ -30,48 +39,16 @@
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.nav-link:hover {
-    color: #FFD700;
-    transform: scale(1.05);
-}
+/* Estilos responsivos */
 
-/* Link ativo - destaque */
-.nav-link.active {
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-/* Estilos para o botão de login */
-.nav-link.btn-login {
-    font-weight: bold;
-    background-color: #FFD700;
-    color: #000;
-    padding: 6px 12px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.nav-link.btn-login:hover {
-    background-color: #e67e22;
-    color: #fff;
-    transform: scale(1.05);
-}
-
-/* Responsividade para telas grandes (Desktop) */
-@media (max-width: 1200px) {
-    .navbar-brand {
-        font-size: 1.8rem;
-    }
-
-    .nav-link {
-        font-size: 1.1rem;
-    }
-}
-
-/* Responsividade para tablets (telas médias) */
+/* Para tablets e desktops menores */
 @media (max-width: 992px) {
     .navbar-brand {
-        font-size: 1.6rem; /* Reduzindo a logo */
+        font-size: 1.5rem;
+    }
+
+    .logo-img {
+        width: 50px;
     }
 
     .nav-link {
@@ -79,54 +56,25 @@
     }
 
     .body-header {
-        padding: 0.8rem 1.5rem; /* Ajuste de padding */
+        padding: 0.8rem 1.2rem;
     }
 }
 
-/* Responsividade para telas pequenas (celulares) */
+/* Para celulares */
 @media (max-width: 768px) {
-    .body-header {
-        padding: 0.5rem 1rem;
+    .navbar-logo {
+        justify-content: center;
+        text-align: center;
+        flex-direction: column; /* Alinha logo e texto verticalmente */
+    }
+
+    .logo-img {
+        margin-right: 0; /* Remove margem lateral */
+        margin-bottom: 5px; /* Espaço entre logo e texto */
     }
 
     .navbar-brand {
-        font-size: 1.4rem;
-    }
-
-    .nav-link {
-        font-size: 0.95rem;
-        margin-right: 10px;
-        padding: 0.5rem 1rem;
-    }
-
-    /* Ajuste do menu para mobile */
-    .navbar-nav {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    .navbar-collapse {
-        justify-content: center;
-    }
-
-    .nav-link.active {
-        font-weight: normal;
-        text-decoration: none;
-    }
-
-    /* Ajuste do botão "Entrar" para responsividade */
-    .nav-link.btn-login {
-        width: 100%;
-        margin-top: 1rem;
-        padding: 10px;
-    }
-}
-
-/* Para telas muito pequenas (celulares em modo retrato) */
-@media (max-width: 480px) {
-    .body-header {
-        padding: 0.5rem 0.5rem;
+        font-size: 1.3rem;
     }
 
     .nav-link {
@@ -134,33 +82,33 @@
         padding: 0.5rem;
     }
 
-    .navbar-brand {
-        font-size: 1.3rem; /* Logo ainda menor */
+    .navbar-nav {
+        flex-direction: column; /* Links em coluna */
+        align-items: center;
     }
 
-    /* Ajustes no layout de filtros para telas pequenas */
-    .filter-container {
+    .nav-link.btn-login {
+        width: auto;
         padding: 10px;
+        margin-top: 1rem;
+    }
+}
+
+/* Para telas muito pequenas */
+@media (max-width: 480px) {
+    .body-header {
+        padding: 0.5rem;
     }
 
-    .filter-title {
-        font-size: 1.3rem;
+    .navbar-brand {
+        font-size: 1.2rem;
     }
 
-    .filter-form {
-        gap: 10px;
+    .logo-img {
+        width: 40px;
     }
 
-    .filter-group label {
-        font-size: 0.9rem;
-    }
-
-    .filter-group input,
-    .filter-group select {
-        font-size: 0.9rem;
-    }
-
-    .filter-button {
-        font-size: 1rem;
+    .nav-link {
+        font-size: 0.8rem;
     }
 }

@@ -4,19 +4,19 @@ import { Link } from 'react-router-dom';
 
 const ChaleFamilia = () => {
   return (
-    <div className="container-chale">
+    <div className="container-domo">
       <img 
-        className='img-acomodacao-outro' 
+        className='img-acomodacao-domo' 
         src="../../../images/chalefamilia.jpg" 
         alt="Domo" 
       />
-      <div className='texto-aco-outro'>
-        <h2><strong>Chalé Família</strong></h2>
+      <div className='texto-aco-domo'>
+        <h2 className='h2-domo' ><strong>Chalé Família</strong></h2>
         <p>
           Obs: Os valores exibidos no site estão sujeitos a constantes atualizações.
           Nos feriados e datas comemorativas, o valor da diária também é diferenciado.
         </p>
-        <ul className="amenities-list">
+        <ul className="pontos-domo">
           <li>2 Quartos</li>
           <li>Camas: 1 Casal e 1 de Solteiro</li>
           <li>Capacidade: 5 pessoas</li>
@@ -25,13 +25,12 @@ const ChaleFamilia = () => {
           <li>Wi-Fi gratuito</li>
           <li>Cozinha Incluída</li>
         </ul>
-        <hr />
       </div>
 
       {/* Seção de Reserva */}
       <div className="reservar">
         <h3>Reservar o Chalé </h3>
-        <p className="preco-diaria">Preço da diária: <strong>R$ 500,00</strong></p>
+        <p>Preço da diária: <strong>R$ 590,00</strong></p>
         <Link to="/pagamento" className="botao-reserva">
           Reservar Agora
         </Link>
