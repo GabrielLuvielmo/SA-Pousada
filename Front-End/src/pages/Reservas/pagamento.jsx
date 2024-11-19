@@ -54,6 +54,7 @@ const Pagamento = () => {
   };
 
   return (
+    <div className='fundo'>  
     <div className="pagamento-container">
       <h2 className="pagamento-titulo"><strong>Página de Pagamento</strong></h2>
       {error && <div className="pagamento-erro">{error}</div>}
@@ -111,8 +112,11 @@ const Pagamento = () => {
       <Link to="/inicio" className="pagamento-voltar">
         Voltar
       </Link>
+     
+
     </div>
+    </div>   
+     
   );
 };
-
 export default Pagamento;

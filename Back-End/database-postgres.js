@@ -15,18 +15,21 @@ export class DatabasePostgres {
     console.log('id', id);
     const email = Usuario.email;
     const senha = Usuario.senha;
+    const confirmar_senha = Usuario.confirmar_senha;
     
-    await sql`insert into Usuario (idUsuario, email, senha)
-    values (${idUsuario}, ${email}, ${senha})`
+    await sql`insert into Usuario (idUsuario, email, senha, confirmar_senha)
+    values (${idUsuario}, ${email}, ${senha}, ${confirmar_senha})`
   }
 
   async updateUsuario(idUsuario, Usuario) {
     const email = Usuario.email;
     const senha = Usuario.senha;
+    const confirmar_senha = Usuario.confirmar_senha
 
     await sql`update Usuario set 
         email = ${email},
-        senha = ${senha}
+        senha = ${senha},
+        confirmar_senha = ${confirmar_senha}
         where idUsuario = ${idUsuario}
     `;
   }

@@ -25,7 +25,11 @@ server.post('/Usuario', async (request, reply) => {
         error.senha = 'Erro na Senha!'
     }
 
-    if (body.email && body.senha){
+    if (!body.confirmar_senha) {
+        error.confirmar_senha = 'Senha não coincide!'
+    }
+
+    if (body.email && body.senha && body.confirmar_senha){
         await databasePostgres.createUsuario(body);
         return reply.status(201).send('Usuario Criado com Sucesso!');
     } else {
@@ -51,11 +55,14 @@ server.put('/Usuario/:id', async (request, reply) => {
     if (!body.senha) {
         error.senha = 'Erro na Senha!'
     }
+    if (!body.confirmar_senha) {
+        error.confirmar_senha = 'Senha não coincide!'
+    }
     if (!idUsuario) {
         error.idUsuario = 'Faltou o ID do Usuario!'
     }
 
-    if (body.email && body.senha && idUsuario){
+    if (body.email && body.senha && body.confirmar_senha && idUsuario){
         await databasePostgres.updateUsuario(idUsuario, body);
         return reply.status(204).send();
     } else {

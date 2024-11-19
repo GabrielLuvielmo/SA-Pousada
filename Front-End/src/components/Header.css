@@ -1,38 +1,40 @@
-/* Melhorando a responsividade */
-
 /* Estilos gerais do body-header */
 .body-header {
     background-color: rgb(32, 0, 61);
     color: #fff;
-    padding: 0.5rem 1rem;
+    padding: 0.3rem 1rem; /* Reduzido o padding para um header mais compacto */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: flex-start; /* Mantém logo e nome alinhados à esquerda */
+    align-items: center;
 }
 
 /* Estilos do logo e texto */
 .navbar-logo {
     display: flex;
     align-items: center;
-    flex-wrap: nowrap; /* Impede que o texto quebre */
+    gap: 5px; /* Ajuste do espaço entre logo e nome */
 }
 
 .logo-img {
-    width: 60px;
-    margin-right: 10px;
+    width: 90px;  /* Aumentado o tamanho da logo */
+    height: auto;
+    margin-right: 0; /* Remove a margem negativa */
 }
 
 .navbar-brand {
-    font-size: 1.8rem;
+    font-size: 1.6rem; /* Tamanho ajustado do texto */
     font-weight: bold;
     color: #fff;
-    padding: 0.5rem 0;
+    padding: 0.3rem 0; /* Reduzido o padding */
     white-space: nowrap; /* Evita quebras */
     transition: color 0.3s ease;
 }
 
 /* Links da navbar */
 .nav-link {
-    font-size: 1.1rem;
+    font-size: 1rem; /* Tamanho ajustado para links */
     color: #fff;
     margin-right: 15px;
     padding: 0.5rem 0;
@@ -44,71 +46,88 @@
 /* Para tablets e desktops menores */
 @media (max-width: 992px) {
     .navbar-brand {
-        font-size: 1.5rem;
+        font-size: 1.4rem; /* Font size reduzido */
     }
 
     .logo-img {
-        width: 50px;
+        width: 70px; /* Reduzido para telas médias */
     }
 
     .nav-link {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .body-header {
-        padding: 0.8rem 1.2rem;
+        padding: 0.5rem 1rem; /* Reduzido o padding do header */
     }
 }
 
 /* Para celulares */
 @media (max-width: 768px) {
     .navbar-logo {
-        justify-content: center;
-        text-align: center;
-        flex-direction: column; /* Alinha logo e texto verticalmente */
+        justify-content: flex-start; /* Mantém logo e nome alinhados lado a lado */
+        text-align: left;
+        flex-direction: row; /* Garante que a logo e o nome fiquem lado a lado */
+        gap: 5px; /* Ajuste fino do espaço entre logo e nome */
     }
 
     .logo-img {
-        margin-right: 0; /* Remove margem lateral */
-        margin-bottom: 5px; /* Espaço entre logo e texto */
+        margin-right: 0;
+        margin-bottom: 0;
+        width: 60px; /* Logo ajustada para celulares */
     }
 
     .navbar-brand {
-        font-size: 1.3rem;
+        font-size: 1.2rem; /* Ajuste do tamanho do texto */
     }
 
     .nav-link {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         padding: 0.5rem;
     }
 
     .navbar-nav {
         flex-direction: column; /* Links em coluna */
-        align-items: center;
+        align-items: center; /* Alinha os links no centro */
+        margin-top: 10px; /* Adiciona um espaçamento entre o menu e os links */
     }
 
-    .nav-link.btn-login {
-        width: auto;
-        padding: 10px;
-        margin-top: 1rem;
+    .body-header {
+        padding: 0.5rem 1rem; /* Reduzido o padding no header */
     }
 }
 
 /* Para telas muito pequenas */
 @media (max-width: 480px) {
     .body-header {
-        padding: 0.5rem;
+        padding: 0.3rem 1rem; /* Reduzido o padding para telas menores */
     }
 
-    .navbar-brand {
-        font-size: 1.2rem;
+    .navbar-logo {
+        justify-content: flex-start; /* Garante alinhamento à esquerda */
+        gap: 5px; /* Reduzido para telas pequenas */
     }
 
     .logo-img {
-        width: 40px;
+        width: 50px;  /* Logo maior para telas pequenas */
+    }
+
+    .navbar-brand {
+        font-size: 1rem; /* Fonte ajustada para telas pequenas */
     }
 
     .nav-link {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
+    }
+
+    .body-header {
+        flex-direction: row; /* Mantém logo e nome lado a lado */
+        text-align: left;
+    }
+
+    .navbar-nav {
+        flex-direction: column; /* Garante que os links fiquem em coluna */
+        align-items: center;
+        margin-top: 10px; /* Espaçamento entre os links e logo */
     }
 }

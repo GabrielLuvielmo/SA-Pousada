@@ -1,10 +1,16 @@
 /* .main-inicio */
 .main-inicio {
-    padding: 20px;
+    background-color: #ecdddd;
+    padding: 15px;
+    width: 100%; /* Garante que a largura ocupe toda a tela */
+    box-sizing: border-box;
 }
 
 /* .filter-section - Filtros */
 .filter-section {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
     display: flex;
     gap: 20px;
     margin: 20px 0;
@@ -15,6 +21,7 @@
     justify-content: center;
     align-items: center;
     transition: box-shadow 0.3s ease-in-out;
+    box-sizing: border-box;
 }
 
 .filter-section:hover {
@@ -40,10 +47,12 @@
     margin-top: 8px;
     padding: 10px 15px;
     width: 180px;
+    max-width: 100%;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 14px;
     transition: border-color 0.3s, box-shadow 0.3s;
+    box-sizing: border-box;
 }
 
 .filter-section input:focus,
@@ -55,22 +64,26 @@
 
 /* .container-principal */
 .container-principal {
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 20px;
+    width: 100%;
     margin-bottom: 20px;
-    background-color: #ffffff;
+    background-color: rgb(249, 239, 226);
     border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    gap: 3vh;
+    border-radius: 10px;
+    padding: 15px;
+    box-sizing: border-box;
 }
 
 .img-acomodacao {
     width: 200px;
     height: auto;
     border-radius: 8px;
-    margin-right: 20px;
+    margin-left: 5vh;
+    box-sizing: border-box;
 }
 
 .texto-aco {
@@ -79,13 +92,20 @@
 
 /* Valor e botão */
 .valordiv {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 20px;
 }
 
-.Pagamento,
+.Pagamento {
+    position: relative;
+    top: 2vh;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
 .Valor-geral {
     font-size: 18px;
     font-weight: bold;
@@ -97,11 +117,13 @@
 }
 
 .Valor {
+    position: relative;
+    top: -3vh;
     padding: 10px 20px;
     background-color: #e67e22;
     color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 10px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -121,7 +143,8 @@
 
     .filter-section input,
     .filter-section select {
-        width: 100%; /* Campos de filtro ocupando 100% da largura */
+        width: 100%; /* Filtros ocupando 100% da largura */
+        font-size: 14px; /* Fontes um pouco maiores para tablets */
     }
 
     .container-principal {
@@ -130,7 +153,7 @@
     }
 
     .img-acomodacao {
-        width: 150px;
+        width: 100%;
         margin-bottom: 15px; /* Deixa a imagem com mais espaço em telas pequenas */
     }
 
@@ -195,5 +218,15 @@
     .Valor {
         padding: 8px 12px;
         font-size: 14px;
+    }
+
+    /* Ajuste na imagem da acomodação */
+    .img-acomodacao {
+        width: 100%;
+        margin-left: 0; /* Remover margem esquerda */
+    }
+
+    .container-principal {
+        padding: 10px;
     }
 }

@@ -70,10 +70,7 @@ const Cadastro = () => {
             </button>
             <h5 className="ja">Não Possui Conta? <Link to="/cadastro" className='entrar'>Cadastrar-se</Link></h5>
           
-            <div className='container-logos'>
-              <FaGoogle /> 
-              <FaFacebook />
-            </div>
+          
           </form>
           {submitted && !error && <div className='success-message'>Cadastro realizado com sucesso!</div>}
           {error && <div className='error-message'>{error}</div>}

@@ -1,163 +1,195 @@
-
 /* CSS do Cadastro */
 form {
-    display: flex;
-    flex-direction: column;
-    
-  }
-  
-  
-  .Login-label {
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  input {
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-  }
-  
-  button {
-    font-size: 16px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .successMessage {
-    text-align: center;
-    color: #4CAF50;
-  }
+  display: flex;
+  flex-direction: column;
+}
 
-  /* CSS da Tela de Cadastro */
+.Login-label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
 
-  .fundo{
-    background-image: url(../images/fundo-pousada.png);
-    width: 100vw;
-    height: 100vh;
-    background-size: 100%;
-    background-position: center;
-    margin: 0;
-  
+input {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+button {
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.successMessage {
+  text-align: center;
+  color: #4CAF50;
+}
+
+/* CSS da Tela de Cadastro */
+.fundo {
+  background-image: url(../images/fundo-pousada.png);
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+}
+
+.CaixaCadastro {
+  margin: auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: #2f2f55f9;
+  width: 90%;  /* 90% da largura da tela */
+  max-width: 500px; /* Largura máxima da caixa */
+  height: fit-content;
+  border-radius: 20px;
+  color: white;
+  margin-top: 10vh;
+}
+
+.input-line {
+  margin-bottom: 0;
+}
+
+.input-line input {
+  border: none;
+  border-bottom: 2px solid #ccc;
+  padding: 0.5rem;
+  width: 100%; /* Garante que o campo de entrada ocupe 100% da largura */
+  outline: none;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.input-line input:focus {
+  border-color: orange;
+  transform: scaleX(1.1); /* Expande a linha para um efeito de foco */
+}
+
+.input-line input::placeholder {
+  color: transparent; /* Esconde o placeholder para manter a linha limpa */
+}
+
+.input-line input:focus:not(.focused) {
+  animation: pulse 0.6s ease-out;
+}
+
+@keyframes pulse {
+  0% {
+      border-color: orange;
   }
+  50% {
+      border-color: #5351bc;
+  }
+  100% {
+      border-color: orange;
+  }
+}
 
+/* Estilo do botão */
+.btn-6 {
+  width: 100%;
+  height: 50px;
+  background: rgb(250, 133, 0);
+  background: radial-gradient(circle, rgb(250, 133, 0) 0%, rgb(255, 179, 15) 100%);
+  color: white;
+  border: none;
+  border-radius: 16px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.botao-btn-6:hover {
+  background-color: #f9ed00;
+  transform: translateY(-3px);
+}
+
+.entrar-conta {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.entrar {
+  color: #41a9ee;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+  font-size: 13px;
+}
+
+.entrar::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #3498db;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.entrar:hover {
+  color: rgb(250, 133, 0);
+}
+
+.entrar:hover::before {
+  visibility: visible;
+  width: 100%;
+}
+
+.ja {
+  font-size: 80%;
+  padding: 3%;
+}
+
+/* Responsividade */
+
+/* Para telas de tablets */
+@media (max-width: 768px) {
   .CaixaCadastro {
-    margin: auto;
-    padding: 2rem;
-    text-align: center;
-    overflow-x: hidden;
-    background-color: #2f2f55f9;
-    width: 40%;
-    height: fit-content;
-    border-radius: 20px;
-    color: white;
-    margin-top: 7.5vh;
-    
+      padding: 1.5rem;
+      margin-top: 8vh;
   }
 
-  .input-line {
-    margin-bottom: 0;
-  }
-  
-  .input-line input {
-    border: none;
-    border-bottom: 2px solid #ccc;
-    padding: 0.5rem;
-    width: 73%;
-    outline: none;
-    transition: border-color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .input-line input:focus {
-    border-color: orange;
-    transform: scaleX(1.1); /* Expande a linha para um efeito de foco */
-  }
-  
-  .input-line input::placeholder {
-    color: transparent; /* Esconde o placeholder para manter a linha limpa */
-  }
-  
-  /* Adiciona uma animação mais suave para o foco */
-  .input-line input:focus:not(.focused) {
-    animation: pulse 0.6s ease-out;
-  }
-  
-  @keyframes pulse {
-    0% {
-      border-color: orange;
-    }
-    50% {
-      border-color: #5351bc; /* Um tom mais claro de laranja */
-    }
-    100% {
-      border-color: orange;
-    }
-  }
-  
   .btn-6 {
-    margin-left: 30.5vh;
-    width: 15vh;
-    height: 6.5vh;
-    text-align: center;
-    display: flex;              
-    align-items: center;         
-    justify-content: center;     
-    padding: 0;           
-    background: rgb(250, 133, 0);
-    background: radial-gradient(circle, rgb(250, 133, 0) 0%, rgb(255, 179, 15) 100%);
-    color: white;
-    border: none;
-    border-radius: 16px; 
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+      height: 45px;
+      font-size: 16px;
   }
-  
-  .botao-btn-6:hover {
-    background-color: #f9ed00; 
-    transform: translateY(-3px); 
-  }
-  
-  .entrar-conta {
-    width: 20px;
-    height: 10px;
-    gap: 10px;
-  }
+
   .entrar {
-    color: #41a9ee;
-    text-decoration: none;
-    font-weight: bold;
-    position: relative;
-    transition: color 0.3s ease-in-out;
-    font-size: 13px;
+      font-size: 14px;
   }
-  
-  .entrar::before {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -2px;
-    left: 0;
-    background-color: #3498db;
-    visibility: hidden;
-    transition: all 0.3s ease-in-out;
+}
+
+/* Para telas pequenas */
+@media (max-width: 480px) {
+  .CaixaCadastro {
+      padding: 1rem;
+      width: 90%;
+      margin-top: 5vh;
   }
-  
-  .entrar:hover {
-    color:rgb(250, 133, 0);
+
+  .input-line input {
+      padding: 0.5rem;
+      font-size: 14px;
   }
-  
-  .entrar:hover::before {
-    visibility: visible;
-    width: 100%;
+
+  .btn-6 {
+      height: 50px;
+      font-size: 16px;
   }
-  
-  .ja{
-    font-size: 80%;
-    padding: 3%;
+
+  .entrar {
+      font-size: 12px;
   }
+}

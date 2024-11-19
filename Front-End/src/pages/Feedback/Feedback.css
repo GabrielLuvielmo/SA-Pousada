@@ -105,13 +105,10 @@
 }
 
 .botao-enviar {
-    margin-left: 27vh;
+    margin-left: 20vh;
     width: 15vh;
     height: 6.5vh;
-    text-align: center;
-    display: flex;              
-    align-items: center;         
-    justify-content: center;     
+    text-align: center;     
     padding: 0;           
     background: rgb(250, 133, 0);
     background: radial-gradient(circle, rgb(250, 133, 0) 0%, rgb(255, 179, 15) 100%);

@@ -11,6 +11,7 @@ Content-Type: application/json
 {
     "email": "usuarioteste@hotmail.com",
     "senha": "senhateste123",
+    "confirmar_senha": "senhateste123"
     
 }
 
@@ -22,6 +23,7 @@ Content-Type: application/json
 {
     "email": "testedeusuario@gmail.com",
     "senha": "testeparasenha456",
+    "confirmar_senha": "testeparasenha456"
     
 }
 
