@@ -12,7 +12,8 @@ body, .container-domo {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 40px;
+
+    
 }
 
 /* Imagem da Acomodação */
@@ -59,38 +60,93 @@ body, .container-domo {
 }
 
 /* Sessão de Reserva */
+/* Sessão de Reserva */
 .sessao-reserva {
-    margin-top: 5vh;
-    text-align: center;
-    padding: 20px;
-    background-color: #f7f7f7;
+    display: flex; /* Ativa Flexbox */
+    flex-direction: column; /* Alinha itens verticalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    padding: 25px; /* Ajuste no padding para dar mais espaço */
+    background-color: #ffffff; /* Fundo branco */
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra sutil para dar profundidade */
+    width: 40%; /* Largura ajustada */
+    max-width: 1200px;
+    text-align: center;
+    margin-top: 20px;
+    gap: 20px; /* Espaçamento entre os elementos */
 }
 
+/* Título */
 .sessao-reserva h3 {
-    font-size: 2rem;
-    color: #2c3e50;
-    margin-bottom: 10px;
+    font-size: 2.4rem; /* Tamanho aumentado para mais impacto */
+    color: #333333; /* Cor escura para o título */
+    margin-bottom: 15px; /* Ajuste no espaçamento */
+    font-weight: bold;
+    text-transform: uppercase; /* Estilo de caixa alta para o título */
 }
 
+/* Parágrafo */
 .sessao-reserva p {
-    font-size: 1.1rem;
-    color: #555;
+    font-size: 1.2rem; /* Tamanho de texto um pouco maior para conforto visual */
+    color: #555555; /* Cor cinza escuro para o texto */
+    margin-bottom: 20px;
+    line-height: 1.6; /* Melhora a legibilidade */
 }
 
 /* Campo de Data */
 .campo-data {
-    margin-top: 15px;
-    text-align: left;
+    width: 100%;
+    max-width: 400px; /* Limite de largura */
+    display: flex; /* Usa Flexbox para organizar label e input */
+    flex-direction: column;
+    gap: 15px; /* Maior espaçamento entre os elementos */
+    margin-top: 20px;
 }
 
+/* Label estilizado */
 .campo-data label {
-    font-size: 1rem;
-    color: #333;
-    margin-bottom: 5px;
-    display: block;
+    font-size: 1.1rem; /* Aumenta um pouco o tamanho do label */
+    font-weight: 500;
+    color: #333333; /* Cor escura para o label */
+    text-transform: uppercase; /* Caixa alta */
 }
+
+/* Input estilizado */
+.campo-data input {
+    width: 80%;
+    gap: 2px;
+    padding: 15px;
+    font-size: 1.1rem;
+    color: #333333; /* Cor do texto mais escura */
+    background-color: #f9f9f9; /* Fundo cinza claro */
+    border: 2px solid #cccccc; /* Borda sutil cinza */
+    border-radius: 8px; /* Borda arredondada mais suave */
+    box-sizing: border-box; /* Garante que o cálculo do tamanho esteja correto */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transições para foco */
+}
+
+/* Efeito de foco no campo */
+.campo-data input:focus {
+    border-color: #007bff; /* Azul para indicar foco */
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* Efeito de brilho azul */
+    outline: none; /* Remove o outline padrão */
+}
+
+/* Placeholder estilizado */
+.campo-data input::placeholder {
+    color: #888888; /* Placeholder cinza claro */
+    font-style: italic; /* Estilo itálico */
+}
+
+/* Input desabilitado (opcional) */
+.campo-data input:disabled {
+    background-color: #f1f1f1;
+    cursor: not-allowed;
+    color: #b0b0b0;
+    box-shadow: none;
+}
+
 
 /* Botões */
 .botao-reserva, .botao-pagamento {

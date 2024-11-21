@@ -67,7 +67,7 @@ const Pagamento = () => {
             value={nomeTitular} 
             onChange={(e) => setNomeTitular(e.target.value)} 
             required 
-          />
+          />  
         </div>
         <div className="pagamento-campo">
           <label htmlFor="cartao-numero">Número do Cartão</label>
