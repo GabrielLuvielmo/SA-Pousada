@@ -33,6 +33,13 @@ CREATE TABLE Quarto (
   descricaoQuarto varchar(255)
 );
 
+INSERT INTO Quarto (nomeQuarto, statusQuarto, capacidadeQuarto, descricaoQuarto) VALUES
+('Domo', 'disponivel', 3, 'Uma experiência única em formato de domo...'),
+('Cabana', 'disponivel', 2, 'Romântica e charmosa, a Cabana...'),
+('Chalé Família', 'disponivel', 5, 'Espaçoso e acolhedor, o Chalé Família...'),
+('Charrua', 'disponivel', 2, 'Transformada a partir de um antigo ônibus...'),
+('Suite com Cozinha', 'disponivel', 3, 'Com todo o charme de uma suíte exclusiva...');
+
 `.then(() => {
   console.log('tabela criada');
 })
