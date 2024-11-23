@@ -147,6 +147,67 @@ server.delete('/Reserva/:id', async (request, reply) => {
     return reply.status(204).send();
 })
 
+// ENDPOINTS - Feedback (CRUD):
+
+// CREATE
+server.post('/Feedback', async (request, reply) => {
+    const body = request.body;
+    let error = {};
+
+    if (!body.nota) {
+        error.nota = 'Erro na Avaliação do Feedback'
+    }
+    if (!body.descricao) {
+        error.descricao = 'Erro na Descrição do Feedback'
+    }
+
+    if (body.nota && body.descricao){
+        await databasePostgres.createFeedback(body, body.idUsuario);
+        return reply.status(201).send('Feedback enviado com Sucesso');
+    } else {
+        return reply.status(400).send(error);
+    }
+})
+
+// READ
+server.get('/Feedback', async () => {
+    const feedback = await databasePostgres.listFeedback();
+    return feedback;
+});
+
+// UPDATE
+server.put('/Feedback/:id', async (request, reply) => {
+    const idFeedback = request.params.id;
+    const body = request.body;
+    let error = {};
+
+    if (!body.nota) {
+        error.nota = 'Erro na Nota do Feedback'
+    }
+    if (!body.descricao) {
+        error.descricao = 'Erro na Descrição do Feedback'
+    }
+
+    if (!idFeedback) {
+        error.idFeedback = 'Faltou o ID do Feedback!'
+    }
+
+    if (body.nota && body.descricao && idReserva){
+        await databasePostgres.updateFeedback(idFeedback, body);
+        return reply.status(204).send();
+    } else {
+        return reply.status(400).send(error);
+    }    
+})
+
+// DELETE
+server.delete('/Feedback/:id', async (request, reply) => {
+    const idFeedback = request.params.id;
+    await databasePostgres.deleteFeedback(idFeedback);
+
+    return reply.status(204).send();
+})
+
 
 server.listen({
     port: 3333

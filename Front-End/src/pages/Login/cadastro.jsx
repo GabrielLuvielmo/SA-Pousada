@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import './login.css';
-import Login from './login';
 import { Link } from 'react-router-dom';
-
 
 const Cadastro = () => {
   const [email, setEmail] = useState('');
@@ -11,9 +9,7 @@ const Cadastro = () => {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
 
-
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitted(true);
 
@@ -28,6 +24,36 @@ const Cadastro = () => {
     }
 
     setError('');
+
+    // Envio dos dados para o backend
+    try {
+      const response = await fetch('http://localhost:3333/Usuario', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json', // Define o tipo de conteúdo como JSON
+        },
+        body: JSON.stringify({
+          email,
+          senha: password,
+          confirmar_senha: confirmPassword,
+        }),
+      });
+
+      // Verifica se a resposta foi bem-sucedida
+      if (response.ok) {
+        const data = await response.json(); // Opcional: processar a resposta JSON
+        setSubmitted(true);
+        setEmail('');
+        setPassword('');
+        setConfirmPassword('');
+      } else {
+        const errorData = await response.json(); // Captura a mensagem de erro do backend
+        setError(errorData.message || 'Erro ao cadastrar. Tente novamente.');
+      }
+    } catch (err) {
+      console.error(err);
+      setError('Erro ao cadastrar. Tente novamente.');
+    }
   };
 
   const handleFocus = (e) => {
@@ -37,7 +63,7 @@ const Cadastro = () => {
   const handleBlur = (e) => {
     e.target.classList.remove('focused');
   };
-    
+
   return (
     <div className='fundo'>
       <br /><br />

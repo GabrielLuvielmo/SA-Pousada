@@ -1,29 +1,50 @@
 import React, { useState } from 'react';
 import './login.css';
-import { FaGoogle, FaFacebook } from "react-icons/fa";
-import Login from './login';
 import { Link } from 'react-router-dom';
 
-
-const Cadastro = () => {
+const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [confirmPassword] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
 
-
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitted(true);
 
-    if (!email || !password || !confirmPassword) {
+    if (!email || !password) {
       setError('Por favor, preencha todos os campos.');
       return;
     }
 
     setError('');
+
+    // Envio dos dados para o backend
+    try {
+      const response = await fetch('http://localhost:3333/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          senha: password,
+        }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        // Aqui você pode armazenar o token ou redirecionar o usuário
+        console.log('Login bem-sucedido:', data);
+        // Redirecionar ou atualizar o estado da aplicação conforme necessário
+      } else {
+        const errorData = await response.json();
+        setError(errorData.message || 'Erro ao fazer login. Tente novamente.');
+      }
+    } catch (err) {
+      console.error(err);
+      setError('Erro ao fazer login. Tente novamente.');
+    }
   };
 
   const handleFocus = (e) => {
@@ -33,7 +54,7 @@ const Cadastro = () => {
   const handleBlur = (e) => {
     e.target.classList.remove('focused');
   };
-    
+
   return (
     <div className='fundo'>
       <br /><br />
@@ -69,10 +90,8 @@ const Cadastro = () => {
               Entrar
             </button>
             <h5 className="ja">Não Possui Conta? <Link to="/cadastro" className='entrar'>Cadastrar-se</Link></h5>
-          
-          
           </form>
-          {submitted && !error && <div className='success-message'>Cadastro realizado com sucesso!</div>}
+          {submitted && !error && <div className='success-message'>Login realizado com sucesso!</div>}
           {error && <div className='error-message'>{error}</div>}
         </div>
       </div>
@@ -80,4 +99,4 @@ const Cadastro = () => {
   );
 };
 
-export default Cadastro;
+export default Login;

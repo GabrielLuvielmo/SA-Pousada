@@ -73,4 +73,31 @@ export class DatabasePostgres {
     await sql`delete from Reserva where id = ${idReserva}`
   }
 
+  //DATABASE -- FEEDBACK -- 
+  
+  async createFeedback(Feedback, idUsuario) {
+    const idFeedback = randomUUID();
+    console.log('id', id);
+    const notaFeedback = Feedback.nota;
+    const descricaoFeedback = Feedback.descricao;
+    
+    await sql`insert into Feedback (idFeedback, notaFeedback, descricaoFeedback, idUsuario)
+    values (${idFeedback}, ${notaFeedback}}, ${descricaoFeedback}, ${idUsuario})`
+  }
+
+  async updateFeedback(idFeedback, Feedback) {
+    const notaFeedback = Feedback.nota;
+    const descricaoFeedback = Feedback.descricao;
+
+    await sql`update Feedback set 
+        notaFeedback = ${notaFeedback},
+        descricaoFeedback = ${descricaoFeedback}
+        where idFeedback = ${idFeedback}
+    `;
+  }
+
+  async deleteFeedback(idFeedback) {
+    await sql`delete from Feedback where id = ${idFeedback}`
+  }
+
 }
