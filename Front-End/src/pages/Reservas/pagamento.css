@@ -4,28 +4,36 @@
   height: 100vh;
   overflow: hidden;
   
+  
 }
 
 
 /* Estilos gerais da página */
 .pagamento-container {
+  width: 80vh;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); 
+  background-color: #2F2F55; 
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  color: #f5f5f5;
-  font-family: Arial, sans-serif;
-  padding: 20px;
+  margin-left: 65vh;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+ 
+
 
 }
 
 .pagamento-titulo {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
   text-align: center;
-  color: rgb(0, 0, 0); /* Laranja vibrante */
-  
+  color: rgb(255, 255, 255); 
+  font-size: 7vh;
+
 }
+
 
 /* Estilos para mensagens de erro */
 .pagamento-erro {
@@ -52,7 +60,9 @@
   flex-direction: column;
   gap: 1.5rem;
   height: 80vh;
+ 
 }
+
 
 /* Estilo dos campos do formulário */
 .pagamento-campo label {
@@ -61,6 +71,7 @@
   margin-bottom: 8px;
   color: #f5f5f5;
   display: block;
+  
 }
 
 .pagamento-campo input {
@@ -80,7 +91,8 @@
 
 /* Botão de pagamento */
 .pagamento-botao {
-  width: 100%;
+  width: 25vh;
+  margin-left:14vh;
   height: 50px;
   text-align: center;
   display: flex;
@@ -104,7 +116,7 @@
 
 /* Botão de voltar - Agora igual ao botão de pagamento */
 .pagamento-voltar {
-  width:26%;
+  width:16vh;
   height: 50px;
   text-align: center;
   display: flex;
@@ -120,6 +132,7 @@
   cursor: pointer;
   margin-top: -9vh;  
   transition: background-color 0.3s ease, transform 0.2s ease;
+  
 }
 
 .pagamento-voltar:hover {

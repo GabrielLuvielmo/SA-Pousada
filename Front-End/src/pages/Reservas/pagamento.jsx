@@ -56,7 +56,7 @@ const Pagamento = () => {
   return (
     <div className='fundo'>  
     <div className="pagamento-container">
-      <h2 className="pagamento-titulo"><strong>Página de Pagamento</strong></h2>
+      <h2 className="pagamento-titulo"><strong>Pagamento</strong></h2>
       {error && <div className="pagamento-erro">{error}</div>}
       <form onSubmit={handleSubmit} className="pagamento-formulario">
         <div className="pagamento-campo">

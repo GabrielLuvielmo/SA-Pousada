@@ -93,7 +93,8 @@ button {
 
 /* Estilo do botão */
 .btn-6 {
-  width: 100%;
+  margin-left: 20vh;
+  width: 20vh;
   height: 50px;
   background: rgb(250, 133, 0);
   background: radial-gradient(circle, rgb(250, 133, 0) 0%, rgb(255, 179, 15) 100%);
