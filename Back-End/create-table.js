@@ -44,5 +44,3 @@ INSERT INTO Quarto (nomeQuarto, statusQuarto, capacidadeQuarto, descricaoQuarto)
   console.log('tabela criada');
 })
 
-
-//Acrescentar parte do FEEDPACK no CRUD (database-postgres.js e server.js)!    < -------------------------------------
