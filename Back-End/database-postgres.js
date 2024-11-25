@@ -1,103 +1,119 @@
-import { randomUUID } from "crypto";
 import { sql } from './db.js';
 
-export class DatabasePostgres { 
-
-  //DATABASE -- USUARIOS --
-
+export class DatabasePostgres {
+  // DATABASE -- USUARIOS --
   async listUsuario() {
-    const usuarios = await sql`select * from Usuario`;
+    const usuarios = await sql`SELECT * FROM Usuario`;
     return usuarios;
   }
 
   async createUsuario(Usuario) {
-    const idUsuario = randomUUID();
-    console.log('id', id);
-    const email = Usuario.email;
-    const senha = Usuario.senha;
-    const confirmar_senha = Usuario.confirmar_senha;
-    
-    await sql`insert into Usuario (idUsuario, email, senha, confirmar_senha)
-    values (${idUsuario}, ${email}, ${senha}, ${confirmar_senha})`
+    const { email, senha, confirmar_senha } = Usuario;
+    const result = await sql`
+      INSERT INTO Usuario (email, senha, confirmar_senha)
+      VALUES (${email}, ${senha}, ${confirmar_senha})
+      RETURNING idUsuario
+    `;
+    return result[0]; // Retorna o idUsuario gerado
   }
 
   async updateUsuario(idUsuario, Usuario) {
-    const email = Usuario.email;
-    const senha = Usuario.senha;
-    const confirmar_senha = Usuario.confirmar_senha
-
-    await sql`update Usuario set 
+    const { email, senha, confirmar_senha } = Usuario;
+    await sql`
+      UPDATE Usuario SET 
         email = ${email},
         senha = ${senha},
         confirmar_senha = ${confirmar_senha}
-        where idUsuario = ${idUsuario}
+      WHERE idUsuario = ${idUsuario}
     `;
   }
 
   async deleteUsuario(idUsuario) {
-    await sql`delete from Usuario where id = ${idUsuario}`
+    await sql`DELETE FROM Usuario WHERE idUsuario = ${idUsuario}`;
   }
- 
-  // DATABASE -- RESERVAS --
 
+  // DATABASE -- RESERVAS --
   async listReserva() {
-    const reservas = await sql`select * from Reserva`;
+    const reservas = await sql`SELECT * FROM Reserva`;
     return reservas;
   }
 
   async createReserva(Reserva, idUsuario) {
-    const idReserva = randomUUID();
-    console.log('id', id);
-    const dataInicio = Reserva.datai;
-    const dataFim = Reserva.dataf;
-    const quartoReserva = Reserva.quarto;
-    
-    await sql`insert into Reserva (idReserva, dataInicio, dataFim, quartoReserva)
-    values (${idReserva}, ${dataInicio}, ${dataFim}, ${quartoReserva}, ${idUsuario})`
+    const { datai: dataInicio, dataf: dataFim, quarto: quartoReserva } = Reserva;
+    const result = await sql`
+      INSERT INTO Reserva (dataInicio, dataFim, quartoReserva, idUsuario)
+      VALUES (${dataInicio}, ${dataFim}, ${quartoReserva}, ${idUsuario})
+      RETURNING idReserva
+    `;
+    return result[0]; // Retorna o idReserva gerado
   }
 
   async updateReserva(idReserva, Reserva) {
-    const dataInicio = Reserva.datai;
-    const dataFim = Reserva.dataf;
-    const quartoReserva = Reserva.quarto;
-
-    await sql`update Reserva set 
+    const { datai: dataInicio, dataf: dataFim, quarto: quartoReserva } = Reserva;
+    await sql`
+      UPDATE Reserva SET 
         dataInicio = ${dataInicio},
-        dataFim = ${dataFim}
+        dataFim = ${dataFim},
         quartoReserva = ${quartoReserva}
-        where idReserva = ${idReserva}
+      WHERE idReserva = ${idReserva}
     `;
   }
 
   async deleteReserva(idReserva) {
-    await sql`delete from Reserva where id = ${idReserva}`
+    await sql`DELETE FROM Reserva WHERE idReserva = ${idReserva}`;
   }
 
-  //DATABASE -- FEEDBACK -- 
-  
-  async createFeedback(Feedback, idUsuario) {
-    const idFeedback = randomUUID();
-    console.log('id', id);
-    const notaFeedback = Feedback.nota;
-    const descricaoFeedback = Feedback.descricao;
+  // DATABASE -- FEEDBACK --
+    // Método para listar feedbacks
+  async listFeedback() {
+    try {
+      const feedbacks = await sql`SELECT * FROM Feedback`;
+      return feedbacks;
+    } catch (error) {
+      console.error('Erro na query listFeedback:', error);
+      throw new Error('Erro ao buscar feedbacks');
+      }
+    }
     
-    await sql`insert into Feedback (idFeedback, notaFeedback, descricaoFeedback, idUsuario)
-    values (${idFeedback}, ${notaFeedback}}, ${descricaoFeedback}, ${idUsuario})`
+  
+    // Método para criar um feedback
+    async createFeedback(Feedback) {
+      const { nota: notaFeedback, descricao: descricaoFeedback } = Feedback;
+  
+      const result = await sql`
+          INSERT INTO Feedback (notaFeedback, descricaoFeedback)
+          VALUES (${notaFeedback}, ${descricaoFeedback})
+          RETURNING idFeedback
+      `;
+      return result[0]; // Retorna o ID gerado
   }
+  
+    // Método para atualizar um feedback
+    async updateFeedback(idFeedback, Feedback) {
+      const { nota: notaFeedback, descricao: descricaoFeedback } = Feedback;
+  
+      try {
+        await sql`
+          UPDATE Feedback SET 
+            notaFeedback = ${notaFeedback},
+            descricaoFeedback = ${descricaoFeedback}
+          WHERE idFeedback = ${idFeedback}
+        `;
+      } catch (error) {
+        console.error('Erro ao atualizar feedback:', error);
+        throw error;
+      }
+    }
+  
+    // Método para excluir um feedback
+    async deleteFeedback(idFeedback) {
+      try {
+        await sql`DELETE FROM Feedback WHERE idFeedback = ${idFeedback}`;
+      } catch (error) {
+        console.error('Erro ao excluir feedback:', error);
+        throw error;
+      }
+    }
 
-  async updateFeedback(idFeedback, Feedback) {
-    const notaFeedback = Feedback.nota;
-    const descricaoFeedback = Feedback.descricao;
-
-    await sql`update Feedback set 
-        notaFeedback = ${notaFeedback},
-        descricaoFeedback = ${descricaoFeedback}
-        where idFeedback = ${idFeedback}
-    `;
-  }
-
-  async deleteFeedback(idFeedback) {
-    await sql`delete from Feedback where id = ${idFeedback}`
-  }
-
+  
 }

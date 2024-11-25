@@ -45,9 +45,8 @@ const Feedback = () => {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            nota: dadosFeedback.avaliacao, // Ajuste para o formato esperado pelo seu backend
+            nota: dadosFeedback.avaliacao, 
             descricao: dadosFeedback.comentarios,
-            // Você pode incluir o ID do usuário aqui, se necessário
           }),
         });
 
@@ -108,10 +107,10 @@ const Feedback = () => {
             {errosFormulario.geral && <span className="mensagem-erro">{errosFormulario.geral}</span>}
             
             <button type="submit" className="botao-enviar">Enviar</button>
-        </form>
-      )}
+          </form>
+        )}
+      </div>
     </div>
-  </div>
   );
 };
 

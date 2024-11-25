@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import './login.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
+  const navigate = useNavigate(); // Hook para redirecionar o usuário
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,7 +22,7 @@ const Login = () => {
 
     // Envio dos dados para o backend
     try {
-      const response = await fetch('http://localhost:3333/login', {
+      const response = await fetch('http://localhost:3333/Usuario', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -34,9 +35,13 @@ const Login = () => {
 
       if (response.ok) {
         const data = await response.json();
-        // Aqui você pode armazenar o token ou redirecionar o usuário
         console.log('Login bem-sucedido:', data);
-        // Redirecionar ou atualizar o estado da aplicação conforme necessário
+
+        // Exibe mensagem de sucesso
+        alert('Usuário logado com sucesso!');
+        
+        // Redireciona para a página principal
+        navigate('/');
       } else {
         const errorData = await response.json();
         setError(errorData.message || 'Erro ao fazer login. Tente novamente.');
@@ -91,7 +96,6 @@ const Login = () => {
             </button>
             <h5 className="ja">Não Possui Conta? <Link to="/cadastro" className='entrar'>Cadastrar-se</Link></h5>
           </form>
-          {submitted && !error && <div className='success-message'>Login realizado com sucesso!</div>}
           {error && <div className='error-message'>{error}</div>}
         </div>
       </div>

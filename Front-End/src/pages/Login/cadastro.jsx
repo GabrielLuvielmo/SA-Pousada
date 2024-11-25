@@ -30,7 +30,7 @@ const Cadastro = () => {
       const response = await fetch('http://localhost:3333/Usuario', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json', // Define o tipo de conteúdo como JSON
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           email,
@@ -39,15 +39,14 @@ const Cadastro = () => {
         }),
       });
 
-      // Verifica se a resposta foi bem-sucedida
       if (response.ok) {
-        const data = await response.json(); // Opcional: processar a resposta JSON
+        const data = await response.json();
         setSubmitted(true);
         setEmail('');
         setPassword('');
         setConfirmPassword('');
       } else {
-        const errorData = await response.json(); // Captura a mensagem de erro do backend
+        const errorData = await response.json();
         setError(errorData.message || 'Erro ao cadastrar. Tente novamente.');
       }
     } catch (err) {

@@ -1,13 +1,11 @@
 import 'dotenv/config';
 import postgres from 'postgres';
 
-let { PGHOST, PGDATABASE, PGUSER, PGPASSWORD } = process.env;
-
 const sql = postgres({
-  host: PGHOST,
-  database: PGDATABASE,
-  username: PGUSER,
-  password: PGPASSWORD,
+  host: process.env.PGHOST,
+  database: process.env.PGDATABASE,
+  username: process.env.PGUSER,
+  password: process.env.PGPASSWORD,
   port: 5432,
   ssl: false,
 });

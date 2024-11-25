@@ -2,15 +2,15 @@ import { sql } from './db.js'
 
 sql`
 CREATE TABLE Usuario (
-  idUsuario text PRIMARY KEY NOT NULL,
-  email varchar(255) NOT NULL,
+  idUsuario SERIAL PRIMARY KEY NOT NULL,
+  email varchar(255) NOT NULL UNIQUE,
   senha varchar(255) NOT NULL,
   confirmar_senha varchar(255) NOT NULL
 );
 
 CREATE TABLE Reserva (
-  idReserva text PRIMARY KEY NOT NULL,
-  idUsuario text NOT NULL,
+  idReserva SERIAL PRIMARY KEY NOT NULL,
+  idUsuario INT NOT NULL,
   dataInicio date NOT NULL,
   dataFim date NOT NULL,
   quartoReserva varchar(255) NOT NULL,
@@ -18,12 +18,11 @@ CREATE TABLE Reserva (
 );
 
 CREATE TABLE Feedback (
-  idFeedback text PRIMARY KEY NOT NULL,
-  idUsuario text NOT NULL,
-  notaFeedback INT NOT NULL,
-  descricaoFeedback VarChar(255) NOT NULL,
-  FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario)
+    idFeedback SERIAL PRIMARY KEY NOT NULL,
+    notaFeedback INT NOT NULL,
+    descricaoFeedback VARCHAR(255) NOT NULL
 );
+
 
 CREATE TABLE Quarto (
   idQuarto SERIAL PRIMARY KEY NOT NULL,
