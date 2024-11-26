@@ -42,7 +42,7 @@ const Login = () => {
       alert('Usuário logado com sucesso!');
       
       // Redireciona para a página principal
-      navigate('/');
+      navigate('/inicio');
     } else {
       const errorData = await response.json();
       setError(errorData.message || 'Erro ao fazer login. Tente novamente.');
