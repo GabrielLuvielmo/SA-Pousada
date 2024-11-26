@@ -20,36 +20,37 @@ const Login = () => {
 
     setError('');
 
-    // Envio dos dados para o backend
-    try {
-      const response = await fetch('http://localhost:3333/Usuario', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email,
-          senha: password,
-        }),
-      });
+  
+  // Envio dos dados para o backend
+  try {
+    const response = await fetch('http://localhost:3333/Usuario/login', {  // Altere para o endpoint de login
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email,
+        senha: password,
+      }),
+    });
 
-      if (response.ok) {
-        const data = await response.json();
-        console.log('Login bem-sucedido:', data);
+    if (response.ok) {
+      const data = await response.json();
+      console.log('Login bem-sucedido:', data);
 
-        // Exibe mensagem de sucesso
-        alert('Usuário logado com sucesso!');
-        
-        // Redireciona para a página principal
-        navigate('/');
-      } else {
-        const errorData = await response.json();
-        setError(errorData.message || 'Erro ao fazer login. Tente novamente.');
-      }
-    } catch (err) {
-      console.error(err);
-      setError('Erro ao fazer login. Tente novamente.');
+      // Exibe mensagem de sucesso
+      alert('Usuário logado com sucesso!');
+      
+      // Redireciona para a página principal
+      navigate('/');
+    } else {
+      const errorData = await response.json();
+      setError(errorData.message || 'Erro ao fazer login. Tente novamente.');
     }
+  } catch (err) {
+    console.error(err);
+    setError('Erro ao fazer login. Tente novamente.');
+  }
   };
 
   const handleFocus = (e) => {

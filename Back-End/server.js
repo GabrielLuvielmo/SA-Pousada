@@ -1,5 +1,7 @@
 import { fastify } from 'fastify';
 import cors from '@fastify/cors';
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';  // Adicionando a importação do JWT
 import { DatabasePostgres } from './database-postgres.js';
 
 const server = fastify();
@@ -9,39 +11,102 @@ const databasePostgres = new DatabasePostgres();
 server.register(cors, {
     origin: '*',
     methods: ['GET', 'POST', 'PUT', 'DELETE']
-
 });
 
 // ENDPOINTS - Usuario (CRUD):
 
-// CREATE
-
 // CREATE USUARIO
 server.post('/Usuario', async (request, reply) => {
-    const body = request.body;
-    let error = {};
-    
-    if (!body.email) {
-      error.email = 'Faltou o Email!';
-    }
-    if (!body.senha) {
-      error.senha = 'Erro na Senha!';
-    }
-    if (!body.confirmar_senha) {
-      error.confirmar_senha = 'Faltou confirmar a Senha!';
-    }
-    if (body.senha !== body.confirmar_senha) {
-      error.confirmar_senha = 'As senhas não coincidem!';
-    }
-  
-    if (Object.keys(error).length > 0) {
-      return reply.status(400).send(error);
-    }
-  
-    const idUsuario = await databasePostgres.createUsuario(body);
-    return reply.status(201).send({ message: 'Usuario Criado com Sucesso!', idUsuario });
-  });
+    const { email, senha } = request.body; // `confirmar_senha` removido
 
+    // Verificar campos obrigatórios no backend (por segurança)
+    if (!email || !senha) {
+        return reply.status(400).send({
+            message: 'Todos os campos são obrigatórios.',
+            error: {
+                email: !email && 'Faltou o Email!',
+                senha: !senha && 'Erro na Senha!',
+            },
+        });
+    }
+
+    try {
+        // Gera o hash da senha antes de salvar
+        const senhaHash = await bcrypt.hash(senha, 10);
+
+        // Cria o usuário no banco de dados
+        const idUsuario = await databasePostgres.createUsuario({ email, senha: senhaHash });
+
+        // Responde ao cliente com sucesso
+        return reply.status(201).send({
+            message: 'Usuário criado com sucesso!',
+            idUsuario,
+        });
+    } catch (error) {
+        console.error('Erro ao criar usuário:', error.message);
+
+        // Verifica se o erro foi devido a duplicidade de email
+        if (error.code === '23505') { // PostgreSQL: código de erro para UNIQUE constraint violation
+            return reply.status(409).send({
+                message: 'Já existe um usuário com este email.',
+            });
+        }
+
+        // Erro genérico
+        return reply.status(500).send({
+            message: 'Erro ao criar usuário. Por favor, tente novamente mais tarde.',
+        });
+    }
+});
+
+// LOGIN
+server.post('/Usuario/login', async (request, reply) => {
+    const { email, senha } = request.body;
+
+    // Validação de entrada no backend
+    if (!email || !senha) {
+        return reply.status(400).send({
+            message: 'Email e senha são obrigatórios.',
+            error: {
+                email: !email && 'Faltou o Email!',
+                senha: !senha && 'Erro na Senha!',
+            },
+        });
+    }
+
+    try {
+        // Busca o usuário pelo email no banco
+        const usuario = await databasePostgres.getUsuarioByEmail(email);
+
+        if (!usuario) {
+            return reply.status(404).send({ message: 'Usuário não encontrado.' });
+        }
+
+        // Valida a senha com bcrypt
+        const senhaValida = await bcrypt.compare(senha, usuario.senha);
+
+        if (!senhaValida) {
+            return reply.status(401).send({ message: 'Senha inválida.' });
+        }
+
+        // Gerar token JWT para autenticação futura
+        const token = jwt.sign(
+            { idUsuario: usuario.idUsuario, email: usuario.email },
+            process.env.JWT_SECRET || 'chave-secreta', // Use uma chave forte em produção
+            { expiresIn: '2h' } // Token expira em 2 horas
+        );
+
+        // Retorna informações básicas do usuário junto com o token
+        return reply.status(200).send({
+            message: 'Login bem-sucedido',
+            usuario: { id: usuario.idUsuario, email: usuario.email },
+            token,
+        });
+    } catch (error) {
+        console.error('Erro no login:', error);
+        return reply.status(500).send({ message: 'Erro no servidor.' });
+    }
+});
 
 // READ
 
