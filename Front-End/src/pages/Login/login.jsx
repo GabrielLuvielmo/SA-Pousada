@@ -23,7 +23,7 @@ const Login = () => {
   
   // Envio dos dados para o backend
   try {
-    const response = await fetch('http://localhost:3333/Usuario/login', {  // Altere para o endpoint de login
+    const response = await fetch('http://localhost:3333/Usuario/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

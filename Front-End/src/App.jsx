@@ -56,8 +56,8 @@ function App() {
         {/*Caminho Para a Pagina da Charrua*/}
         <Route path="/charua" element={<Charrua/>}/>
 
-          {/*Caminho Para a Pagina do Pagamento*/}
-          <Route path="/pagamento" element={<Pagamento/>}/>
+        {/*Caminho Para a Pagina do Pagamento*/}
+        <Route path="/pagamento" element={<Pagamento/>}/>
 
 
       </Routes>

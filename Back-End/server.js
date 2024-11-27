@@ -1,7 +1,7 @@
 import { fastify } from 'fastify';
 import cors from '@fastify/cors';
 import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken';  // Adicionando a importação do JWT
+import jwt from 'jsonwebtoken';  
 import { DatabasePostgres } from './database-postgres.js';
 
 const server = fastify();
@@ -17,7 +17,7 @@ server.register(cors, {
 
 // CREATE USUARIO
 server.post('/Usuario', async (request, reply) => {
-    const { email, senha } = request.body; // `confirmar_senha` removido
+    const { email, senha } = request.body; 
 
     // Verificar campos obrigatórios no backend (por segurança)
     if (!email || !senha) {
@@ -46,7 +46,7 @@ server.post('/Usuario', async (request, reply) => {
         console.error('Erro ao criar usuário:', error.message);
 
         // Verifica se o erro foi devido a duplicidade de email
-        if (error.code === '23505') { // PostgreSQL: código de erro para UNIQUE constraint violation
+        if (error.code === '23505') { 
             return reply.status(409).send({
                 message: 'Já existe um usuário com este email.',
             });
